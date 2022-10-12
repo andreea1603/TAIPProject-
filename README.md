@@ -1,6 +1,6 @@
 ## NeuroDiagnosis
 A mobile application for the diagnosis of Alzheimer's Disease and other neurodegenerative conditions
-
+https://drive.google.com/drive/u/1/folders/1V_obvODj0q1rkMPJ1OSHYKPFXnv1c_JM
 ### Coordinators: 
 * Ingrid Stoleru
 * Adrian Iftene
