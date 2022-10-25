@@ -1,7 +1,6 @@
 package com.example.neurodiagnosis.webapi.controllers;
 
-import com.example.neurodiagnosis.application.service.user.IUsersService;
-import com.example.neurodiagnosis.application.service.user.UsersService;
+import com.example.neurodiagnosis.application.interfaces.service.user.IUsersService;
 import com.example.neurodiagnosis.webapi.dtos.ApplicationUserDTO;
 import com.example.neurodiagnosis.webapi.dtos.JwtTokenResponse;
 import com.example.neurodiagnosis.webapi.dtos.LoginRequestDTO;

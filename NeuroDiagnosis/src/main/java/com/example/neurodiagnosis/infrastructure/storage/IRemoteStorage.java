@@ -1,4 +1,4 @@
-package com.example.neurodiagnosis.storage;
+package com.example.neurodiagnosis.infrastructure.storage;
 
 public interface IRemoteStorage {
     void addFile(String name, byte[] content);

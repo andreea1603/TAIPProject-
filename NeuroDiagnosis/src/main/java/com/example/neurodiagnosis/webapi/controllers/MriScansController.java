@@ -1,6 +1,6 @@
 package com.example.neurodiagnosis.webapi.controllers;
 
-import com.example.neurodiagnosis.application.service.mri.IMriScansService;
+import com.example.neurodiagnosis.application.interfaces.service.mri.IMriScansService;
 import com.example.neurodiagnosis.domain.entities.Mri;
 import com.example.neurodiagnosis.webapi.dtos.*;
 import jakarta.ws.rs.Consumes;

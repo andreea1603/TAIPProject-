@@ -1,4 +1,4 @@
-package com.example.neurodiagnosis.storage;
+package com.example.neurodiagnosis.infrastructure.storage;
 
 public class RemoteStorage implements IRemoteStorage{
     @Override
