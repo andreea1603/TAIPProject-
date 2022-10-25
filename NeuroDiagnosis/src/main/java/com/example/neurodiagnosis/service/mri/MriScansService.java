@@ -1,7 +1,7 @@
 package com.example.neurodiagnosis.service.mri;
 
 import com.example.neurodiagnosis.model.Mri;
-import com.example.neurodiagnosis.repository.mri.IMriScansRepository;
+import com.example.neurodiagnosis.repository.mri.scan.IMriScansRepository;
 
 import java.util.Date;
 import java.util.UUID;

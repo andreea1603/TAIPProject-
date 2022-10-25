@@ -1,4 +1,4 @@
-package com.example.neurodiagnosis.repository.mri;
+package com.example.neurodiagnosis.repository.mri.scan;
 
 import com.example.neurodiagnosis.model.Mri;
 
