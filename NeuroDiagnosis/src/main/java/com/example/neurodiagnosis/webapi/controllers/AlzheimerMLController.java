@@ -2,7 +2,6 @@ package com.example.neurodiagnosis.webapi.controllers;
 
 import com.example.neurodiagnosis.application.service.mripredict.IAlzheimerPredictorFromMriScanService;
 import com.example.neurodiagnosis.webapi.dtos.MriScanDTO;
-import com.example.neurodiagnosis.webapi.dtos.SubmitTestResultRequestDTO;
 import com.example.neurodiagnosis.webapi.dtos.TestResultDTO;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.POST;
