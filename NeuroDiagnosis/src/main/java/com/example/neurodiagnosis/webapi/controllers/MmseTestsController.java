@@ -1,9 +1,6 @@
 package com.example.neurodiagnosis.webapi.controllers;
 
-import com.example.neurodiagnosis.application.interfaces.service.mmse.IMmseService;
-import com.example.neurodiagnosis.domain.entities.TestResult;
-import com.example.neurodiagnosis.webapi.dtos.MriScanDTO;
-import com.example.neurodiagnosis.webapi.dtos.SubmitMriScanRequestDTO;
+import com.example.neurodiagnosis.application.service.mmse.IMmseService;
 import com.example.neurodiagnosis.webapi.dtos.SubmitTestResultRequestDTO;
 import com.example.neurodiagnosis.webapi.dtos.TestResultDTO;
 import jakarta.ws.rs.Consumes;

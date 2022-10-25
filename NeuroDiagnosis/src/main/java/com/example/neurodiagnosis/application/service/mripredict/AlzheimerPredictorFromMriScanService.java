@@ -1,4 +1,4 @@
-package com.example.neurodiagnosis.application.interfaces.service.mripredict;
+package com.example.neurodiagnosis.application.service.mripredict;
 
 import com.example.neurodiagnosis.domain.models.AlzheimerPredictionScore;
 

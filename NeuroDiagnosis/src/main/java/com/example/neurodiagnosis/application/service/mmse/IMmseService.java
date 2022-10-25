@@ -1,4 +1,4 @@
-package com.example.neurodiagnosis.application.interfaces.service.mmse;
+package com.example.neurodiagnosis.application.service.mmse;
 
 
 import java.util.UUID;

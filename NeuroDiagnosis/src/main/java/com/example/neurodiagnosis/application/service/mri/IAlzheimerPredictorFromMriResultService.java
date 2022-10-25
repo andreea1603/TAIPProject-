@@ -1,4 +1,4 @@
-package com.example.neurodiagnosis.application.interfaces.service.mri;
+package com.example.neurodiagnosis.application.service.mri;
 
 import jakarta.json.JsonObject;
 

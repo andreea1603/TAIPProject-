@@ -1,9 +1,8 @@
-package com.example.neurodiagnosis.application.interfaces.service.user;
+package com.example.neurodiagnosis.application.service.user;
 
 import com.example.neurodiagnosis.domain.entities.User;
 import com.example.neurodiagnosis.application.interfaces.repositories.IUserRepository;
 import com.example.neurodiagnosis.application.interfaces.email.IEmailService;
-import jakarta.inject.Named;
 import lombok.AllArgsConstructor;
 
 import java.util.Optional;

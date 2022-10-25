@@ -1,4 +1,4 @@
-package com.example.neurodiagnosis.application.interfaces.service.mri;
+package com.example.neurodiagnosis.application.service.mri;
 
 <<<<<<< HEAD:NeuroDiagnosis/src/main/java/com/example/neurodiagnosis/application/service/mri/MriScansService.java
 import com.example.neurodiagnosis.domain.entities.Mri;

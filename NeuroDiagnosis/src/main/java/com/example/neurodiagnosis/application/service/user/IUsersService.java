@@ -1,4 +1,4 @@
-package com.example.neurodiagnosis.application.interfaces.service.user;
+package com.example.neurodiagnosis.application.service.user;
 
 import com.example.neurodiagnosis.domain.entities.User;
 
