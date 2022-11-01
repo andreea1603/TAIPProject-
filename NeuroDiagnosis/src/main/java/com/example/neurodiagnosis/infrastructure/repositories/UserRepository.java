@@ -1,9 +1,12 @@
 package com.example.neurodiagnosis.infrastructure.repositories;
 
 import com.example.neurodiagnosis.application.interfaces.repositories.IUserRepository;
+import com.example.neurodiagnosis.application.service.database.Database;
 import com.example.neurodiagnosis.domain.entities.User;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Named;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
 
 import java.io.Serializable;
 import java.util.Optional;
@@ -15,6 +18,15 @@ public class UserRepository implements IUserRepository, Serializable {
 
     @Override
     public User createUser(String username, String lastName, String firstName, String passwordHash) {
+        User user = new User();
+        user.setUsername(username);
+        user.setLastName(lastName);
+        user.setPasswordHash(passwordHash);
+        EntityManagerFactory em = Database.getEntity();
+        EntityManager entityManager = em.createEntityManager();
+        entityManager.getTransaction().begin();
+        entityManager.persist(user);
+        entityManager.getTransaction().commit();
 
         return null;
     }

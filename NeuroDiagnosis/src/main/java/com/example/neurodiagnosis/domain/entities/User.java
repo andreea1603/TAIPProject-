@@ -1,17 +1,17 @@
 package com.example.neurodiagnosis.domain.entities;
 
 import com.example.neurodiagnosis.domain.shared.BaseEntity;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 import java.util.Date;
 import java.util.UUID;
 
-
+@Entity
+@Table(name="user")
 public class User extends BaseEntity {
-
+    @Id
     private String emailAddress;
     private String passwordHash;
     private Boolean handedness;
@@ -47,6 +47,9 @@ public class User extends BaseEntity {
         this.firstName = firstName;
         this.username = username;
         this.lastName = lastName;
+    }
+
+    public User() {
     }
 
     public void setEmailAddress(String emailAddress) {

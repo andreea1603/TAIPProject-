@@ -1,13 +1,18 @@
 package com.example.neurodiagnosis.domain.entities;
 
 import com.example.neurodiagnosis.domain.shared.BaseEntity;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 import java.util.Date;
 import java.util.UUID;
-
+@Entity
+@Table(name="testResult")
 public class TestResult extends BaseEntity {
     private Integer testResult;
     private Date testDate;
+    @Id
     private UUID userId;
 
     public TestResult(UUID resultId, Date testDate, Integer testResult, UUID userId) {
@@ -15,6 +20,9 @@ public class TestResult extends BaseEntity {
         this.testResult = testResult;
         this.testDate = testDate;
         this.userId = userId;
+    }
+
+    public TestResult() {
     }
 
     public Integer getTestResult() {

@@ -9,12 +9,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2414eb7-6a8f-4736-b1b0-f6d1b1efdd1d" name="Changes" comment="Changes">
+    <list default="true" id="a2414eb7-6a8f-4736-b1b0-f6d1b1efdd1d" name="Changes" comment="database">
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/GlassFish_5_2022_31.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/NeuroDiagnosis_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/NeuroDiagnosis_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/user/IPasswordHashGeneratorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/user/IPasswordHashGeneratorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/user/PasswordHashGeneratorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/user/PasswordHashGeneratorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/user/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/user/UsersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/database/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/domain/entities/Mri.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/domain/entities/Mri.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/domain/entities/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/domain/entities/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/domain/entities/TestResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/domain/entities/TestResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/domain/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/domain/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/domain/shared/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/domain/shared/BaseEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +43,8 @@
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
-    <option name="FILTER_INFO" value="true" />
-    <option name="FILTER_DEBUG" value="true" />
+    <option name="FILTER_INFO" value="false" />
+    <option name="FILTER_DEBUG" value="false" />
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -49,22 +56,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true",
-    "last_opened_file_path": "C:/Users/zero6/Desktop/neurodiagnosis/TAIPProject-/NeuroDiagnosis",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.neurodiagnosis.application.service.user" />
@@ -95,18 +94,7 @@
       <recent name="com.example.neurodiagnosis.webapi.controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UsersServiceRegisterTests">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="GlassFish Server.GlassFish 5.2022.31">
     <configuration name="tobedeleted" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.neurodiagnosis.webapi.tobedeleted" />
       <module name="NeuroDiagnosis" />
@@ -118,87 +106,6 @@
       </extension>
       <method v="2">
         <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GlassFish 5.2022.31" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 7.0.0.M8" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/NeuroDiagnosis-1.0-SNAPSHOT" />
-      <deployment>
-        <artifact name="NeuroDiagnosis:war exploded">
-          <settings />
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="DOMAIN" value="domain1" />
-        <option name="PRESERVE" value="false" />
-        <option name="COMPATIBILITY" value="false" />
-        <option name="VIRTUAL_SERVER" />
-        <option name="USERNAME" value="admin" />
-        <option name="CREDENTIAL_ALIAS" />
-      </server-settings>
-      <predefined_log_file enabled="true" id="GlassFish" />
-      <extension name="net.ashald.envfile">
-        <option name="IS_ENABLED" value="false" />
-        <option name="IS_SUBST" value="false" />
-        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
-        <option name="IS_IGNORE_MISSING_FILES" value="false" />
-        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
-        <ENTRIES>
-          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
-        </ENTRIES>
-      </extension>
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="9009" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="NeuroDiagnosis:war exploded" />
-        </option>
       </method>
     </configuration>
     <configuration name="EmailValidatorServiceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -294,6 +201,7 @@
       <workItem from="1666709252482" duration="1434000" />
       <workItem from="1666719569223" duration="6646000" />
       <workItem from="1667296111149" duration="11010000" />
+      <workItem from="1667327852061" duration="3017000" />
     </task>
     <servers />
   </component>
@@ -310,6 +218,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
