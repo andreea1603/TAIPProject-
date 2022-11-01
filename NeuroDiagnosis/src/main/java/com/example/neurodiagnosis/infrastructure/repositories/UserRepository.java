@@ -15,6 +15,7 @@ public class UserRepository implements IUserRepository, Serializable {
 
     @Override
     public User createUser(String username, String lastName, String firstName, String passwordHash) {
+
         return null;
     }
 

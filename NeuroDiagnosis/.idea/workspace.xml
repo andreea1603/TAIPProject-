@@ -10,28 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2414eb7-6a8f-4736-b1b0-f6d1b1efdd1d" name="Changes" comment="Changes">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/NeuroDiagnosis_ear_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/NeuroDiagnosis_ejb_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/META-INF/application.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/user/IPasswordHashGeneratorService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/user/JwtService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/user/PasswordHashGeneratorService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/validators/EmailValidatorService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/validators/IEmailValidatorService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/tobedeleted.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tests/services/EmailValidatorServiceTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tests/services/UsersServiceLoginTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tests/services/UsersServiceRegisterTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/NeuroDiagnosis_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/NeuroDiagnosis_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/interfaces/repositories/IUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/interfaces/repositories/IUserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/user/IUsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/user/IUsersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/user/IPasswordHashGeneratorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/user/IPasswordHashGeneratorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/user/PasswordHashGeneratorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/user/PasswordHashGeneratorService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/user/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/user/UsersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/domain/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/domain/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/email/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/email/EmailService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/dtos/RegisterRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/dtos/RegisterRequestDTO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +58,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "create.test.in.the.same.root": "true",
-    "last_opened_file_path": "C:/Users/zero6/Desktop/aset_project/TAIPProject-/NeuroDiagnosis/src/main/java/com/example/neurodiagnosis/application/interfaces",
+    "last_opened_file_path": "C:/Users/zero6/Desktop/neurodiagnosis/TAIPProject-/NeuroDiagnosis",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -89,6 +72,7 @@
       <recent name="com.example.neurodiagnosis.webapi.dtos" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\zero6\Desktop\neurodiagnosis\TAIPProject-\NeuroDiagnosis" />
       <recent name="C:\Users\zero6\Desktop\aset_project\TAIPProject-\NeuroDiagnosis\src\main\java\com\example\neurodiagnosis\application\interfaces" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -309,7 +293,7 @@
       <workItem from="1666701739089" duration="33000" />
       <workItem from="1666709252482" duration="1434000" />
       <workItem from="1666719569223" duration="6646000" />
-      <workItem from="1667296111149" duration="9576000" />
+      <workItem from="1667296111149" duration="11010000" />
     </task>
     <servers />
   </component>

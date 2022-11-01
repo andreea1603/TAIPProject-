@@ -10,6 +10,9 @@ import java.io.Serializable;
 public class EmailValidatorService implements IEmailValidatorService, Serializable {
     @Override
     public boolean validateEmail(String email) {
-        return true;
+
+        String regex = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$";
+
+        return email.matches(regex);
     }
 }
