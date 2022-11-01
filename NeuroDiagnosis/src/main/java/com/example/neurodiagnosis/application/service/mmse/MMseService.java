@@ -28,6 +28,6 @@ public class MMseService implements IMmseService, Serializable {
     }
     @Override
     public boolean submitTestResults(UUID userId, Date dateTimeOffset, int score) {
-        return this.mmseTestResultsRepository.addNewTestResultsEntry(userId, dateTimeOffset, score);
+            return this.mmseTestResultsRepository.addNewTestResultsEntry(userId, dateTimeOffset, score);
     }
 }

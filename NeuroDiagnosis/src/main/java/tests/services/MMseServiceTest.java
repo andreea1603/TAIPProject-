@@ -11,7 +11,9 @@ import com.example.neurodiagnosis.application.service.user.UsersService;
 import com.example.neurodiagnosis.application.service.validators.EmailValidatorService;
 import com.example.neurodiagnosis.domain.entities.User;
 import com.example.neurodiagnosis.infrastructure.repositories.MmseTestResultsRepository;
+import com.example.neurodiagnosis.infrastructure.repositories.MriScansRepository;
 import com.example.neurodiagnosis.webapi.dtos.RegisterRequestDTO;
+import jakarta.inject.Scope;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -40,16 +42,36 @@ public class MMseServiceTest {
     }
 
     @Test
-    void TestResults_ShouldBe_Added_To_DB() {
+    void TestResultsService_ShouldBe_Return_True() {
         //Arrange
-        IMmseTestResultsRepository mmseTestResultsRepository = new MmseTestResultsRepository();
+        IMmseTestResultsRepository mmseTestResultsRepository =
+                Mockito.mock(MmseTestResultsRepository.class);
+        UUID userId = new UUID(8, 8);
+        Date date = new Date(2022, Calendar.MARCH, 2);
+
+        Mockito.when(mmseTestResultsRepository.addNewTestResultsEntry(userId, date, 84))
+                .thenReturn(true);
         IMmseService mmseService = new MMseService(mmseTestResultsRepository);
 
         //Act
-        UUID userUuid = new UUID(8, 8);
-        Date date = new Date(1999, Calendar.APRIL,10);
-        boolean result = mmseService.submitTestResults(userUuid, date, 83);
+        boolean result = mmseService.submitTestResults(userId, date, 84);
         //Assert
-        assertFalse(result);
+        assertTrue(result);
+    }
+
+    @Test
+    void TestResults_ShouldBe_Added_To_DB() {
+        //Arrange
+        IMmseTestResultsRepository mmseTestResultsRepository =
+                new MmseTestResultsRepository();
+        UUID userId = new UUID(8, 8);
+        Date date = new Date(2022, Calendar.MARCH, 2);
+
+        IMmseService mmseService = new MMseService(mmseTestResultsRepository);
+
+        //Act
+        boolean result = mmseService.submitTestResults(userId, date, 84);
+        //Assert
+        assertTrue(!result);
     }
 }
