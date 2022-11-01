@@ -15,7 +15,6 @@ import java.util.UUID;
 @Named("userRepository")
 @SessionScoped
 public class UserRepository implements IUserRepository, Serializable {
-
     @Override
     public User createUser(String username, String lastName, String firstName, String passwordHash) {
         User user = new User();
@@ -32,23 +31,32 @@ public class UserRepository implements IUserRepository, Serializable {
 
     @Override
     public User updateUserPassword(UUID userId, String passwordHash) {
+        EntityManagerFactory em = Database.getEntity();
+        EntityManager entityManager = em.createEntityManager();
         return null;
     }
 
     @Override
     public Optional<User> findByEmail(String email) {
-        return Optional.empty();
+        EntityManagerFactory em = Database.getEntity();
+        EntityManager entityManager = em.createEntityManager();
+        return Optional.of(entityManager.find(User.class, email));
     }
 
     @Override
     public Optional<User> findByUsername(String userName) {
         EntityManagerFactory em = Database.getEntity();
         EntityManager entityManager = em.createEntityManager();
-        return Optional.empty();
+        return Optional.of(entityManager.find(User.class, userName));
     }
 
     @Override
     public void deleteUserAccount(UUID userId) {
-
+        EntityManagerFactory em = Database.getEntity();
+        EntityManager entityManager = em.createEntityManager();
+        entityManager.getTransaction().begin();
+        User user = entityManager.find(User.class, userId);
+        entityManager.remove(user);
+        entityManager.getTransaction().commit();
     }
 }

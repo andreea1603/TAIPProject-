@@ -27,6 +27,13 @@ public class Mri extends BaseEntity {
         super();
     }
 
+    public void setImage(Blob image) {
+        this.image = image;
+    }
+
+    public void setUserId(UUID userId) {
+        this.userId = userId;
+    }
 
     public UUID getUserId() {
         return userId;
