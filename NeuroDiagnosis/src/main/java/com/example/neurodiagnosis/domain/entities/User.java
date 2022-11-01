@@ -11,12 +11,12 @@ import java.util.UUID;
 @Entity
 @Table(name="user")
 public class User extends BaseEntity {
-    @Id
     private String emailAddress;
     private String passwordHash;
     private Boolean handedness;
     private String phoneNumber;
     private String firstName;
+    @Id
     private String username;
     private String lastName;
     private Date birthDate;

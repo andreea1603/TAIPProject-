@@ -27,8 +27,7 @@ public class UserRepository implements IUserRepository, Serializable {
         entityManager.getTransaction().begin();
         entityManager.persist(user);
         entityManager.getTransaction().commit();
-
-        return null;
+        return user;
     }
 
     @Override
@@ -43,6 +42,8 @@ public class UserRepository implements IUserRepository, Serializable {
 
     @Override
     public Optional<User> findByUsername(String userName) {
+        EntityManagerFactory em = Database.getEntity();
+        EntityManager entityManager = em.createEntityManager();
         return Optional.empty();
     }
 
