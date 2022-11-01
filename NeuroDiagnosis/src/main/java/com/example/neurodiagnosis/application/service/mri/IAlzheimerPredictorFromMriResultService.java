@@ -1,7 +1,7 @@
 package com.example.neurodiagnosis.application.service.mri;
 
-import jakarta.json.JsonObject;
+import org.json.simple.JSONObject;
 
 public interface IAlzheimerPredictorFromMriResultService {
-    JsonObject makePrediction(byte[] image);
+    JSONObject makePrediction(byte[] image);
 }
