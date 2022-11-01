@@ -9,5 +9,6 @@ public interface IUserRepository {
     User createUser(String username, String lastName, String firstName, String passwordHash);
     User updateUserPassword(UUID userId, String passwordHash);
     Optional<User> findByEmail(String email);
+    Optional<User> findByUsername(String userName);
     void deleteUserAccount(UUID userId);
 }

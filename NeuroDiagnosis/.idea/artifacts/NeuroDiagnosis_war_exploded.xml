@@ -17,6 +17,19 @@
           <element id="library" level="project" name="Maven: org.postgresql:postgresql:42.2.26" />
           <element id="library" level="project" name="Maven: org.checkerframework:checker-qual:3.5.0" />
           <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.24" />
+          <element id="library" level="project" name="Maven: org.mockito:mockito-all:1.9.5" />
+          <element id="library" level="project" name="Maven: org.junit.jupiter:junit-jupiter:5.9.1" />
+          <element id="library" level="project" name="Maven: org.junit.jupiter:junit-jupiter-api:5.9.1" />
+          <element id="library" level="project" name="Maven: org.opentest4j:opentest4j:1.2.0" />
+          <element id="library" level="project" name="Maven: org.junit.platform:junit-platform-commons:1.9.1" />
+          <element id="library" level="project" name="Maven: org.apiguardian:apiguardian-api:1.1.2" />
+          <element id="library" level="project" name="Maven: org.junit.jupiter:junit-jupiter-params:5.9.1" />
+          <element id="library" level="project" name="Maven: org.junit.jupiter:junit-jupiter-engine:5.9.1" />
+          <element id="library" level="project" name="Maven: org.junit.platform:junit-platform-engine:1.9.1" />
+          <element id="library" level="project" name="Maven: com.auth0:java-jwt:4.2.1" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.13.4.2" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.4" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.13.4" />
         </element>
       </element>
       <element id="directory" name="META-INF">

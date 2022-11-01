@@ -1,6 +1,10 @@
 package com.example.neurodiagnosis.domain.entities;
 
 import com.example.neurodiagnosis.domain.shared.BaseEntity;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Date;
 import java.util.UUID;
@@ -18,6 +22,10 @@ public class User extends BaseEntity {
     private Date birthDate;
     private Boolean gender;
 
+    public User (UUID userId) {
+        super(userId);
+    }
+
     public User(String emailAddress, String passwordHash, Boolean handedness, String phoneNumber, String firstName, String username, String lastName, Date birthDate, Boolean gender, UUID userId) {
         super(userId);
 
@@ -30,6 +38,15 @@ public class User extends BaseEntity {
         this.lastName = lastName;
         this.birthDate = birthDate;
         this.gender = gender;
+    }
+
+    public User(String emailAddress, String firstName, String username, String lastName, UUID userId) {
+        super(userId);
+
+        this.emailAddress = emailAddress;
+        this.firstName = firstName;
+        this.username = username;
+        this.lastName = lastName;
     }
 
     public void setEmailAddress(String emailAddress) {
