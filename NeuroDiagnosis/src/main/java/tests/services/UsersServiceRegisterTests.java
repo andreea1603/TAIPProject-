@@ -3,6 +3,7 @@ package tests.services;
 import com.example.neurodiagnosis.application.interfaces.email.IEmailService;
 import com.example.neurodiagnosis.application.interfaces.repositories.IUserRepository;
 import com.example.neurodiagnosis.application.service.user.IUsersService;
+import com.example.neurodiagnosis.application.service.user.PasswordHashGeneratorService;
 import com.example.neurodiagnosis.application.service.user.UsersService;
 import com.example.neurodiagnosis.application.service.validators.EmailValidatorService;
 import com.example.neurodiagnosis.application.service.validators.IEmailValidatorService;
@@ -66,7 +67,7 @@ class UsersServiceRegisterTests {
                         Matchers.any(), Matchers.any());
 
         IUsersService usersService = new UsersService(usersRepositoryMock, emailServiceMock,
-                new EmailValidatorService());
+                new EmailValidatorService(), new PasswordHashGeneratorService());
 
         //Act
         var response = usersService.registerUser(registerRequest.getUsername(),
@@ -96,7 +97,7 @@ class UsersServiceRegisterTests {
         Mockito.doReturn(false).when(emailValidatorServiceMock)
                 .validateEmail(registerRequest.getEmailAddress());
 
-        IUsersService usersService = new UsersService(new UserRepository(), emailServiceMock, emailValidatorServiceMock);
+        IUsersService usersService = new UsersService(new UserRepository(), emailServiceMock, emailValidatorServiceMock, new PasswordHashGeneratorService());
 
         //Act
         var response = usersService.registerUser(registerRequest.getUsername(),
@@ -132,7 +133,7 @@ class UsersServiceRegisterTests {
                 .when(emailServiceMock)
                 .sendTemplatedEmail(Matchers.any(), Matchers.any(), Matchers.any(), Matchers.any());
 
-        IUsersService usersService = new UsersService(usersRepositoryMock, emailServiceMock, new EmailValidatorService());
+        IUsersService usersService = new UsersService(usersRepositoryMock, emailServiceMock, new EmailValidatorService(), new PasswordHashGeneratorService());
 
         //Act
         var response = usersService.registerUser(registerRequest.getUsername(),

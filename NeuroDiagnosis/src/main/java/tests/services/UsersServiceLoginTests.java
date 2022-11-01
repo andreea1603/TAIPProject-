@@ -1,6 +1,7 @@
 package tests.services;
 
 import com.example.neurodiagnosis.application.service.user.IUsersService;
+import com.example.neurodiagnosis.application.service.user.PasswordHashGeneratorService;
 import com.example.neurodiagnosis.application.service.user.UsersService;
 import com.example.neurodiagnosis.application.service.validators.EmailValidatorService;
 import com.example.neurodiagnosis.infrastructure.email.EmailService;
@@ -30,7 +31,7 @@ class UsersServiceLoginTests {
     @Test
     void givenUserServiceLogin__whenUserRequestLoginAndPasswordIsIncorrect__shouldRejectLoginRequestAndReturnNoJwt() {
         //Arange
-        IUsersService usersService = new UsersService(new UserRepository(), new EmailService(), new EmailValidatorService());
+        IUsersService usersService = new UsersService(new UserRepository(), new EmailService(), new EmailValidatorService(), new PasswordHashGeneratorService());
 
         var loginRequest = new LoginRequestDTO("emailExistentLaRegister@hotmail.com", "parolaGresita");
 
@@ -45,7 +46,7 @@ class UsersServiceLoginTests {
     @Test
     void givenUserServiceLogin__whenUserRequestLoginAndUsernameOrEmailRegistrationIsInexistentInDB__shouldRejectLoginRequestAndReturnNoJwt() {
         //Arrange
-        IUsersService usersService = new UsersService(new UserRepository(), new EmailService(), new EmailValidatorService());
+        IUsersService usersService = new UsersService(new UserRepository(), new EmailService(), new EmailValidatorService(), new PasswordHashGeneratorService());
         var loginRequest = new LoginRequestDTO("emailSauUsernameInexistentLaRegister@hotmail.com", "orice");
 
         //Act
