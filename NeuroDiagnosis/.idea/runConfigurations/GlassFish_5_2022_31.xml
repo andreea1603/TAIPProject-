@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="GlassFish 5.2022.31" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 7.0.0.M8" ALTERNATIVE_JRE_ENABLED="false">
-    <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8084/NeuroDiagnosis-1.0-SNAPSHOT" />
+    <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/NeuroDiagnosis-1.0-SNAPSHOT" />
     <option name="UPDATING_POLICY" value="restart-server" />
     <deployment>
       <artifact name="NeuroDiagnosis:war exploded">
