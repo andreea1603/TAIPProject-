@@ -6,7 +6,6 @@ import com.example.neurodiagnosis.domain.entities.Mri;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Named;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
@@ -21,8 +20,7 @@ public class MriScansRepository implements IMriScansRepository, Serializable {
     public Mri addNewScanEntry(UUID usedId, Date date, String url, Date expiresAt, Date signedAt, String mineType) {
         Mri mri = new Mri();
         mri.setUserId(usedId);
-        EntityManagerFactory em = Database.getEntity();
-        EntityManager entityManager = em.createEntityManager();
+        EntityManager entityManager = Database.getEntity();
         entityManager.getTransaction().begin();
         entityManager.persist(mri);
         entityManager.getTransaction().commit();

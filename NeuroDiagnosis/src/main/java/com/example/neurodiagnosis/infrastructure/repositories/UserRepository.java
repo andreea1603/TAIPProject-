@@ -6,7 +6,6 @@ import com.example.neurodiagnosis.domain.entities.User;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Named;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
 
 import java.io.Serializable;
 import java.util.Optional;
@@ -21,8 +20,7 @@ public class UserRepository implements IUserRepository, Serializable {
         user.setUsername(username);
         user.setLastName(lastName);
         user.setPasswordHash(passwordHash);
-        EntityManagerFactory em = Database.getEntity();
-        EntityManager entityManager = em.createEntityManager();
+        EntityManager entityManager = Database.getEntity();
         entityManager.getTransaction().begin();
         entityManager.persist(user);
         entityManager.getTransaction().commit();
@@ -31,29 +29,25 @@ public class UserRepository implements IUserRepository, Serializable {
 
     @Override
     public User updateUserPassword(UUID userId, String passwordHash) {
-        EntityManagerFactory em = Database.getEntity();
-        EntityManager entityManager = em.createEntityManager();
+        EntityManager entityManager = Database.getEntity();
         return null;
     }
 
     @Override
     public Optional<User> findByEmail(String email) {
-        EntityManagerFactory em = Database.getEntity();
-        EntityManager entityManager = em.createEntityManager();
+        EntityManager entityManager = Database.getEntity();
         return Optional.of(entityManager.find(User.class, email));
     }
 
     @Override
     public Optional<User> findByUsername(String userName) {
-        EntityManagerFactory em = Database.getEntity();
-        EntityManager entityManager = em.createEntityManager();
+        EntityManager entityManager = Database.getEntity();
         return Optional.of(entityManager.find(User.class, userName));
     }
 
     @Override
     public void deleteUserAccount(UUID userId) {
-        EntityManagerFactory em = Database.getEntity();
-        EntityManager entityManager = em.createEntityManager();
+        EntityManager entityManager = Database.getEntity();
         entityManager.getTransaction().begin();
         User user = entityManager.find(User.class, userId);
         entityManager.remove(user);

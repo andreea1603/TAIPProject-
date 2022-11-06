@@ -1,8 +1,6 @@
 package com.example.neurodiagnosis.domain.shared;
 
-import jakarta.persistence.Id;
-import jakarta.persistence.MappedSuperclass;
-import jakarta.persistence.Transient;
+import jakarta.persistence.*;
 import lombok.Getter;
 
 import java.util.ArrayList;
@@ -13,6 +11,7 @@ import java.util.UUID;
 @MappedSuperclass
 public class BaseEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     @Transient
@@ -22,6 +21,23 @@ public class BaseEntity {
         this.domainEvents = new ArrayList<>();
         this.id = id;
     }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public List<IDomainEvent> getDomainEvents() {
+        return domainEvents;
+    }
+
+    public void setDomainEvents(List<IDomainEvent> domainEvents) {
+        this.domainEvents = domainEvents;
+    }
+
     protected BaseEntity(){}
 
 

@@ -5,7 +5,6 @@ import com.example.neurodiagnosis.application.service.database.Database;
 import com.example.neurodiagnosis.domain.entities.TestResult;
 import jakarta.inject.Named;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -20,8 +19,7 @@ public class MmseTestResultsRepository implements IMmseTestResultsRepository, Se
             testResult.setUserId(userId);
             testResult.setTestResult(score);
             testResult.setTestDate(dateTimeOffset);
-            EntityManagerFactory em = Database.getEntity();
-            EntityManager entityManager = em.createEntityManager();
+            EntityManager entityManager = Database.getEntity();
             entityManager.getTransaction().begin();
             entityManager.persist(testResult);
             entityManager.getTransaction().commit();

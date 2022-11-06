@@ -2,21 +2,19 @@ package com.example.neurodiagnosis.domain.entities;
 
 import com.example.neurodiagnosis.domain.shared.BaseEntity;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 import java.util.Date;
 import java.util.UUID;
 
 @Entity
-@Table(name="user")
+@Table(name="users")
 public class User extends BaseEntity {
     private String emailAddress;
     private String passwordHash;
     private Boolean handedness;
     private String phoneNumber;
     private String firstName;
-    @Id
     private String username;
     private String lastName;
     private Date birthDate;

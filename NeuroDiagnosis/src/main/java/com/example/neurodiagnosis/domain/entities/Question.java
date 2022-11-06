@@ -2,7 +2,6 @@ package com.example.neurodiagnosis.domain.entities;
 
 import com.example.neurodiagnosis.domain.shared.BaseEntity;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
 
@@ -11,7 +10,6 @@ import java.util.UUID;
 @Entity
 @Table(name="question")
 public class Question extends BaseEntity {
-    @Id
     private String question;
     private String response;
     @Lob
