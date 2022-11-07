@@ -19,9 +19,12 @@ public class UserRepository implements IUserRepository, Serializable {
         User user = new User();
         user.setUsername(username);
         user.setLastName(lastName);
+        user.setFirstName(firstName);
         user.setPasswordHash(passwordHash);
         EntityManager entityManager = Database.getEntity();
-        entityManager.getTransaction().begin();
+        if(!entityManager.getTransaction().isActive()){
+            entityManager.getTransaction().begin();
+        }
         entityManager.persist(user);
         entityManager.getTransaction().commit();
         return user;
@@ -36,13 +39,20 @@ public class UserRepository implements IUserRepository, Serializable {
     @Override
     public Optional<User> findByEmail(String email) {
         EntityManager entityManager = Database.getEntity();
-        return Optional.of(entityManager.find(User.class, email));
+        User user = entityManager.createNamedQuery("User.findByEmail", User.class)
+                .setParameter("email", email)
+                .getSingleResult();
+        return Optional.of(user);
+
     }
 
     @Override
     public Optional<User> findByUsername(String userName) {
         EntityManager entityManager = Database.getEntity();
-        return Optional.of(entityManager.find(User.class, userName));
+        User user = entityManager.createNamedQuery("User.findByUsername", User.class)
+                .setParameter("username", userName)
+                .getSingleResult();
+        return Optional.of(user);
     }
 
     @Override

@@ -20,7 +20,9 @@ public class MmseTestResultsRepository implements IMmseTestResultsRepository, Se
             testResult.setTestResult(score);
             testResult.setTestDate(dateTimeOffset);
             EntityManager entityManager = Database.getEntity();
-            entityManager.getTransaction().begin();
+            if(!entityManager.getTransaction().isActive()){
+                entityManager.getTransaction().begin();
+            }
             entityManager.persist(testResult);
             entityManager.getTransaction().commit();
             return true;

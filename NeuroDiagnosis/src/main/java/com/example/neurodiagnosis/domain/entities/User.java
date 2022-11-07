@@ -1,14 +1,18 @@
 package com.example.neurodiagnosis.domain.entities;
 
 import com.example.neurodiagnosis.domain.shared.BaseEntity;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
 
 import java.util.Date;
 import java.util.UUID;
-
 @Entity
-@Table(name="users")
+@Table(name="users", uniqueConstraints=
+@UniqueConstraint(columnNames={"emailAddress", "username"}))
+@NamedQueries({
+        @NamedQuery(name = "User.findByEmail", query = "SELECT u FROM User u WHERE u.emailAddress = :email"),
+        @NamedQuery(name = "User.findByUsername", query = "SELECT u FROM User u WHERE u.username = :username"),
+})
 public class User extends BaseEntity {
     private String emailAddress;
     private String passwordHash;

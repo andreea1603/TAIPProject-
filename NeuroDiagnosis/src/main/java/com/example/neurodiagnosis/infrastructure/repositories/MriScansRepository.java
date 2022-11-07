@@ -21,7 +21,9 @@ public class MriScansRepository implements IMriScansRepository, Serializable {
         Mri mri = new Mri();
         mri.setUserId(usedId);
         EntityManager entityManager = Database.getEntity();
-        entityManager.getTransaction().begin();
+        if(!entityManager.getTransaction().isActive()){
+            entityManager.getTransaction().begin();
+        }
         entityManager.persist(mri);
         entityManager.getTransaction().commit();
         return mri;
