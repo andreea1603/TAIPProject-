@@ -1,20 +1,16 @@
 package com.example.neurodiagnosis.domain.entities;
 
 import com.example.neurodiagnosis.domain.shared.BaseEntity;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Lob;
-import jakarta.persistence.Table;
-
-import java.sql.Blob;
+import jakarta.persistence.*;
 import java.util.UUID;
 @Entity
 @Table(name="mri")
 public class Mri extends BaseEntity {
     private UUID userId;
     @Lob
-    private Blob image;
+    private byte[] image;
 
-    public Mri(UUID imageID, UUID userId, Blob image) {
+    public Mri(UUID imageID, UUID userId, byte[] image) {
         super(imageID);
         this.userId = userId;
         this.image = image;
@@ -24,7 +20,7 @@ public class Mri extends BaseEntity {
 
     }
 
-    public void setImage(Blob image) {
+    public void setImage(byte[] image) {
         this.image = image;
     }
 
@@ -36,7 +32,7 @@ public class Mri extends BaseEntity {
         return userId;
     }
 
-    public Blob getImage() {
+    public byte[] getImage() {
         return image;
     }
 }
