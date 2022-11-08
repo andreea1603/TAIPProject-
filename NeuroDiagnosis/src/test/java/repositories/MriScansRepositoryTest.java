@@ -7,6 +7,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.UUID;
@@ -20,7 +21,7 @@ public class MriScansRepositoryTest {
     private final String URL = "www.my.url";
     private final Date EXPIRES_AT = new Date(2022, Calendar.MARCH, 2);
     private final Date SIGNED_AT = new Date(2022, Calendar.MARCH, 2);
-    private final String MINE_TYPE = "png";
+    private final File MINE_TYPE = new File("..\\NeuroDiagnosis\\tdd\\MMseService & AlzheimerPrediction\\AlzheimerTestsFail.png");
 
     private Mri mri;
 
@@ -42,7 +43,7 @@ public class MriScansRepositoryTest {
     @Test
     void addNewScanEntryUserIdTest() {
         var repository = new MriScansRepository(new DatabaseContextTests());
-        Mri resultMri = repository.addNewScanEntry(USER_ID, DATE, URL, EXPIRES_AT, SIGNED_AT, MINE_TYPE);
+        Mri resultMri = repository.addNewScanEntry(USER_ID,MINE_TYPE);
 
         assertEquals(mri.getUserId(), resultMri.getUserId());
 
@@ -51,7 +52,7 @@ public class MriScansRepositoryTest {
     @Test
     void addNewScanEntryMriTest() {
         var repository = new MriScansRepository(new DatabaseContextTests());
-        Mri resultMri = repository.addNewScanEntry(USER_ID, DATE, URL, EXPIRES_AT, SIGNED_AT, MINE_TYPE);
+        Mri resultMri = repository.addNewScanEntry(USER_ID, MINE_TYPE);
 
         assertEquals(mri, resultMri);
     }
