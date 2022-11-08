@@ -12,6 +12,7 @@ import java.util.UUID;
 @NamedQueries({
         @NamedQuery(name = "User.findByEmail", query = "SELECT u FROM User u WHERE u.emailAddress = :email"),
         @NamedQuery(name = "User.findByUsername", query = "SELECT u FROM User u WHERE u.username = :username"),
+        @NamedQuery(name = "User.countUsers", query = "SELECT u FROM User u"),
 })
 public class User extends BaseEntity {
     private String emailAddress;

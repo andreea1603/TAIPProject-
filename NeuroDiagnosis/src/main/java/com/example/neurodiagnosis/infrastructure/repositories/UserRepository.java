@@ -1,66 +1,100 @@
 package com.example.neurodiagnosis.infrastructure.repositories;
 
 import com.example.neurodiagnosis.application.interfaces.repositories.IUserRepository;
-import com.example.neurodiagnosis.application.service.database.Database;
+import com.example.neurodiagnosis.application.service.database.IDatabaseContext;
 import com.example.neurodiagnosis.domain.entities.User;
+import com.example.neurodiagnosis.infrastructure.repositories.base.BaseRepository;
 import jakarta.enterprise.context.SessionScoped;
+import jakarta.inject.Inject;
 import jakarta.inject.Named;
-import jakarta.persistence.EntityManager;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+
 @Named("userRepository")
 @SessionScoped
-public class UserRepository implements IUserRepository, Serializable {
+public class UserRepository extends BaseRepository
+        implements IUserRepository, Serializable {
+
+    @Inject
+    public UserRepository(@Named("DatabaseContextLive") IDatabaseContext databaseContext) {
+        super(databaseContext);
+    }
+
     @Override
-    public User createUser(String username, String lastName, String firstName, String passwordHash) {
+    public User createUser(String username, String lastName, String firstName, String email, String passwordHash) {
         User user = new User();
+
         user.setUsername(username);
         user.setLastName(lastName);
         user.setFirstName(firstName);
         user.setPasswordHash(passwordHash);
-        EntityManager entityManager = Database.getEntity();
-        if(!entityManager.getTransaction().isActive()){
-            entityManager.getTransaction().begin();
+        user.setEmailAddress(email);
+        user.setId(UUID.randomUUID());
+
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
         }
-        entityManager.persist(user);
-        entityManager.getTransaction().commit();
+        em.persist(user);
+        em.getTransaction().commit();
+
         return user;
     }
 
     @Override
     public User updateUserPassword(UUID userId, String passwordHash) {
-        EntityManager entityManager = Database.getEntity();
+//        EntityManager entityManager = Database.getEntity();
         return null;
     }
 
     @Override
     public Optional<User> findByEmail(String email) {
-        EntityManager entityManager = Database.getEntity();
-        User user = entityManager.createNamedQuery("User.findByEmail", User.class)
+
+        List<User> users = em.createNamedQuery("User.findByEmail", User.class)
                 .setParameter("email", email)
-                .getSingleResult();
-        return Optional.of(user);
+                .getResultList();
+
+        if (users.size() == 0) {
+            return Optional.empty();
+        }
+
+        return Optional.of(users.get(0));
 
     }
 
     @Override
     public Optional<User> findByUsername(String userName) {
-        EntityManager entityManager = Database.getEntity();
-        User user = entityManager.createNamedQuery("User.findByUsername", User.class)
+        List<User> users = em.createNamedQuery("User.findByUsername", User.class)
                 .setParameter("username", userName)
-                .getSingleResult();
-        return Optional.of(user);
+                .getResultList();
+
+        if (users.size() == 0) {
+            return Optional.empty();
+        }
+
+        return Optional.of(users.get(0));
     }
 
     @Override
     public void deleteUserAccount(UUID userId) {
-        EntityManager entityManager = Database.getEntity();
-        entityManager.getTransaction().begin();
-        User user = entityManager.find(User.class, userId);
-        entityManager.remove(user);
-        entityManager.getTransaction().commit();
+        em.getTransaction().begin();
+
+        User user = em.find(User.class, userId);
+        em.remove(user);
+
+        em.getTransaction().commit();
+    }
+
+    @Override
+    public int getUsersCount() {
+        //TODO: Optimizat sa nu incarce totul din DB
+        var result = em.createNamedQuery("User.countUsers", User.class);
+
+        var users = em.createNamedQuery("User.countUsers").getResultList();
+
+        return users.size();
     }
 }

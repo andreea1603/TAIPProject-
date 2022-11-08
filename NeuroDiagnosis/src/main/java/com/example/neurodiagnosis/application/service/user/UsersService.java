@@ -84,7 +84,7 @@ public class UsersService implements  IUsersService, Serializable {
 
         var passwordHash = passwordHashGeneratorService.calculateHash(password);
 
-        var newUser = userRepository.createUser(username, lastName, firstName, passwordHash);
+        var newUser = userRepository.createUser(username, lastName, firstName, email, passwordHash);
 
         if (newUser == null) {
             return Optional.empty();

@@ -1,10 +1,15 @@
 package com.example.neurodiagnosis.webapi.dtos;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import java.util.Date;
 import java.util.UUID;
 
+@AllArgsConstructor
+@NoArgsConstructor
 public class TestResultDTO {
-    private Integer testResult;
-    private Date testDate;
-    private UUID userId;
+    public Integer testResult;
+    public Date testDate;
+    public UUID userId;
 }

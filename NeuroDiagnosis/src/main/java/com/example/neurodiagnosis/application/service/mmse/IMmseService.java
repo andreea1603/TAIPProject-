@@ -1,9 +1,11 @@
 package com.example.neurodiagnosis.application.service.mmse;
 
 
+import com.example.neurodiagnosis.domain.entities.TestResult;
+
 import java.util.UUID;
 import java.util.Date;
 
 public interface IMmseService {
-    boolean submitTestResults(UUID userId, Date dateTimeOffset, int score);
+    TestResult submitTestResults(UUID userId, Date dateTimeOffset, int score);
 }

@@ -1,6 +1,60 @@
-POST http://localhost:8080/api/auth/login
+GET http://localhost:8080/NeuroDiagnosis-1.0-SNAPSHOT/api/auth/resource
 
-<> 2022-10-25T215954.404.html
+<> 2022-11-07T212740.401.html
+
+###
+
+GET http://localhost:8080/NeuroDiagnosis-1.0-SNAPSHOT/api/auth/resource
+
+<> 2022-11-07T212723.401.html
+
+###
+
+GET http://localhost/NeuroDiagnosis-1.0-SNAPSHOT/api/auth/resource
+
+<> 2022-11-07T212634.404.html
+
+###
+
+GET http://localhost:8080/NeuroDiagnosis-1.0-SNAPSHOT/api/auth/resource
+
+<> 2022-11-07T212624.401.html
+
+###
+
+GET http://localhost/NeuroDiagnosis-1.0-SNAPSHOT/api/auth/resource
+
+<> 2022-11-07T212557.404.html
+
+###
+
+GET http://localhost/NeuroDiagnosis-1.0-SNAPSHOT/api/auth/resource
+
+<> 2022-11-07T212555.404.html
+
+###
+
+GET http://localhost/NeuroDiagnosis-1.0-SNAPSHOT/api/auth/resource
+
+<> 2022-11-07T212436.404.html
+
+###
+
+GET http://localhost/NeuroDiagnosis-1.0-SNAPSHOT/api/auth/resource
+
+<> 2022-11-07T212430.404.html
+
+###
+
+GET http://localhost:8080/NeuroDiagnosis-1.0-SNAPSHOT/api/auth/resource
+
+<> 2022-11-07T212358.200.json
+
+###
+
+GET http://localhost/NeuroDiagnosis-1.0-SNAPSHOT/api/auth/resource
+
+<> 2022-11-07T212239.404.html
 
 ###
 

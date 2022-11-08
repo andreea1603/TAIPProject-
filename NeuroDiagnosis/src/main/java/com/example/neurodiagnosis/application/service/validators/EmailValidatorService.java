@@ -11,8 +11,8 @@ public class EmailValidatorService implements IEmailValidatorService, Serializab
     @Override
     public boolean validateEmail(String email) {
 
-        String regex = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$";
-
+        String regex = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@"
+                + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
         return email.matches(regex);
     }
 }

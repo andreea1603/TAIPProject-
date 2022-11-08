@@ -24,6 +24,7 @@ public class JwtService {
                 .withJWTId(UUID.randomUUID().toString())
                 .withClaim("userId", user.getId().toString())
                 .withClaim("userEmail", user.getEmailAddress())
+                .withClaim("userName", user.getUsername())
                 .sign(algorithm);
     }
 

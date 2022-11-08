@@ -13,21 +13,27 @@ import java.util.Date;
 @Setter
 public class RegisterRequestDTO {
     private String emailAddress;
-    private String phoneNumber;
-    private String firstName;
     private String username;
+    private String firstName;
     private String lastName;
     private String password;
+    private String phoneNumber;
+
+
+
+
     private Date birthDate;
     private Boolean gender;
     private Boolean handedness;
 
-    public RegisterRequestDTO(String emailAddress, String username, String firstName, String lastName, String password) {
+    public RegisterRequestDTO(String emailAddress, String username, String firstName, String lastName, String password,
+                              String phoneNumber) {
 
         this.emailAddress = emailAddress;
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
+        this.phoneNumber = phoneNumber;
     }
 }

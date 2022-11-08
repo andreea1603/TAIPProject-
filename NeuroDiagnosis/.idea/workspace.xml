@@ -9,23 +9,57 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2414eb7-6a8f-4736-b1b0-f6d1b1efdd1d" name="Changes" comment="database">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/NeuroDiagnosis_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/NeuroDiagnosis_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/GlassFish_5_2022_31.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/GlassFish_5_2022_31.xml" afterDir="false" />
+    <list default="true" id="37f3fcd6-a0ff-4019-a84e-130639b53af3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../NeuroDiagnosis.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/database/DatabaseContextTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/database/IDatabaseContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/base/BaseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/seed/UsersFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/annotations/EnforcesUserAuthorization.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/filters/AuthorizationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/security/AuthSecurityContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/security/UserPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.NeuroDiagnosis.dir/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.NeuroDiagnosis.dir/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.NeuroDiagnosis.dir/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.NeuroDiagnosis.dir/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/NeuroDiagnosis_ear_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/NeuroDiagnosis_ejb_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/NeuroDiagnosis_war.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/NeuroDiagnosis_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2022-10-25T215954.404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/GlassFish_5_2022_31.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/NeuroDiagnoserApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/NeuroDiagnoserApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/database/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/domain/entities/Mri.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/domain/entities/Mri.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/domain/entities/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/domain/entities/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/domain/entities/TestResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/domain/entities/TestResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/interfaces/repositories/IMmseTestResultsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/interfaces/repositories/IMmseTestResultsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/interfaces/repositories/IUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/interfaces/repositories/IUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/database/DatabaseContextLive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/mmse/IMmseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/mmse/IMmseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/mmse/MMseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/mmse/MMseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/user/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/user/JwtService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/user/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/user/UsersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/validators/EmailValidatorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/validators/EmailValidatorService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/domain/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/domain/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/domain/shared/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/domain/shared/BaseEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/MmseTestResultsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/MmseTestResultsRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/MriScansRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/MriScansRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/controllers/AuthController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/controllers/MmseTestsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/controllers/MmseTestsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/tobedeleted.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/tobedeleted.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/dtos/RegisterRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/dtos/RegisterRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/dtos/SubmitTestResultRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/dtos/SubmitTestResultRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/dtos/TestResultDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/dtos/TestResultDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/middlewares/AuthenticationMiddleware.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tests/repositories/MriScansRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/repositories/MriScansRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tests/services/AlzheimerPredictionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/services/AlzheimerPredictionTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tests/services/EmailValidatorServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/services/EmailValidatorServiceTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tests/services/MMseServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/services/MMseServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tests/services/MriScansServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/services/MriScansServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tests/services/UsersServiceLoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/services/UsersServiceLoginTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tests/services/UsersServiceRegisterTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/services/UsersServiceRegisterTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,222 +71,362 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="master" />
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
-    <option name="FILTER_INFO" value="false" />
-    <option name="FILTER_DEBUG" value="false" />
-    <option name="CUSTOM_FILTER" value="" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2GZde7Z3bWxqaC1prfn2AKudu8n" />
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2HEFs6EBnueoEaMvIO8x7bzRblu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/zero6/Desktop/neurodiagnosis/TAIPProject-/NeuroDiagnosis/src/test/java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.32988507&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
+  }
+}</component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.example.neurodiagnosis.application.service.user" />
-      <recent name="com.example.neurodiagnosis.application.service.validators" />
-      <recent name="com.example.neurodiagnosis.webapi.dtos" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\zero6\Desktop\neurodiagnosis\TAIPProject-\NeuroDiagnosis" />
-      <recent name="C:\Users\zero6\Desktop\aset_project\TAIPProject-\NeuroDiagnosis\src\main\java\com\example\neurodiagnosis\application\interfaces" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\zero6\Desktop\neurodiagnosis\TAIPProject-\NeuroDiagnosis\src\main\java" />
-      <recent name="C:\Users\zero6\Desktop\neurodiagnosis\TAIPProject-\NeuroDiagnosis\src\main" />
+      <recent name="C:\Users\zero6\Desktop\neurodiagnosis\TAIPProject-\NeuroDiagnosis\src\test\java" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
-      <recent name="com.example.neurodiagnosis.application.service.mripredict" />
-    </key>
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="tests.services" />
-      <recent name="com.example.neurodiagnosis.application.service.user" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="tests.services" />
-      <recent name="com.example.neurodiagnosis.webapi.dtos" />
-      <recent name="com.example.neurodiagnosis.webapi.controllers" />
+      <recent name="com.example.neurodiagnosis.application.service.database" />
     </key>
   </component>
-  <component name="RunManager" selected="GlassFish Server.GlassFish 5.2022.31">
-    <configuration name="tobedeleted" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.neurodiagnosis.webapi.tobedeleted" />
+  <component name="RunManager" selected="GlassFish Server.GlassFish 7.0.0.M8">
+    <configuration name="GlassFish 7.0.0.M8" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 7.0.0.M8" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="NeuroDiagnosis:war exploded">
+          <settings />
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="DOMAIN" value="domain1" />
+        <option name="PRESERVE" value="false" />
+        <option name="COMPATIBILITY" value="false" />
+        <option name="VIRTUAL_SERVER" />
+        <option name="USERNAME" value="admin" />
+        <option name="CREDENTIAL_ALIAS" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="GlassFish" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="9009" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="NeuroDiagnosis:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <configuration name="generated-requests | #5" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="5" requestIdentifier="#5" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #6" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="6" requestIdentifier="#6" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="AlzheimerPredictionTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NeuroDiagnosis" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.neurodiagnosis.webapi.*" />
+          <option name="PATTERN" value="services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
+      <option name="PACKAGE_NAME" value="services" />
+      <option name="MAIN_CLASS_NAME" value="services.AlzheimerPredictionTests" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AlzheimerPredictionTests.Should_Return_A_Positive_Score_For_Dementia" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MMseServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NeuroDiagnosis" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tests.services.*" />
+          <option name="PATTERN" value="services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tests.services" />
-      <option name="MAIN_CLASS_NAME" value="tests.services.AlzheimerPredictionTests" />
-      <option name="METHOD_NAME" value="Should_Return_A_Positive_Score_For_Dementia" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MMseServiceTest.TestResults_ShouldBe_Added_To_DB" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="NeuroDiagnosis" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.services.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests.services" />
-      <option name="MAIN_CLASS_NAME" value="tests.services.MMseServiceTest" />
-      <option name="METHOD_NAME" value="TestResults_ShouldBe_Added_To_DB" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UsersServiceLoginTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="NeuroDiagnosis" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.services.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests.services" />
-      <option name="MAIN_CLASS_NAME" value="tests.services.UsersServiceLoginTests" />
+      <option name="PACKAGE_NAME" value="services" />
+      <option name="MAIN_CLASS_NAME" value="services.MMseServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UsersServiceRegisterTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MriScansServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NeuroDiagnosis" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tests.services.*" />
+          <option name="PATTERN" value="services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tests.services" />
-      <option name="MAIN_CLASS_NAME" value="tests.services.UsersServiceRegisterTests" />
+      <option name="PACKAGE_NAME" value="services" />
+      <option name="MAIN_CLASS_NAME" value="services.MriScansServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="GlassFish Server.GlassFish 5.2022.31" />
-      <item itemvalue="JUnit.AlzheimerPredictionTests.Should_Return_A_Positive_Score_For_Dementia" />
-      <item itemvalue="JUnit.MMseServiceTest.TestResults_ShouldBe_Added_To_DB" />
-      <item itemvalue="JUnit.UsersServiceLoginTests" />
-      <item itemvalue="JUnit.UsersServiceRegisterTests" />
-      <item itemvalue="Application.tobedeleted" />
+      <item itemvalue="GlassFish Server.GlassFish 7.0.0.M8" />
+      <item itemvalue="HTTP Request.generated-requests | #5" />
+      <item itemvalue="HTTP Request.generated-requests | #6" />
+      <item itemvalue="JUnit.AlzheimerPredictionTests" />
+      <item itemvalue="JUnit.MMseServiceTest" />
+      <item itemvalue="JUnit.MriScansServiceTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.tobedeleted" />
-        <item itemvalue="JUnit.AlzheimerPredictionTests.Should_Return_A_Positive_Score_For_Dementia" />
-        <item itemvalue="JUnit.MMseServiceTest.TestResults_ShouldBe_Added_To_DB" />
-        <item itemvalue="JUnit.UsersServiceLoginTests" />
-        <item itemvalue="JUnit.UsersServiceRegisterTests" />
+        <item itemvalue="HTTP Request.generated-requests | #5" />
+        <item itemvalue="HTTP Request.generated-requests | #6" />
+        <item itemvalue="JUnit.AlzheimerPredictionTests" />
+        <item itemvalue="JUnit.MMseServiceTest" />
+        <item itemvalue="JUnit.MriScansServiceTest" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a2414eb7-6a8f-4736-b1b0-f6d1b1efdd1d" name="Changes" comment="" />
-      <created>1666600134677</created>
+      <changelist id="37f3fcd6-a0ff-4019-a84e-130639b53af3" name="Changes" comment="" />
+      <created>1667842542812</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1666600134677</updated>
-      <workItem from="1666600136421" duration="1000" />
-      <workItem from="1666620029306" duration="2928000" />
-      <workItem from="1666701739089" duration="33000" />
-      <workItem from="1666709252482" duration="1434000" />
-      <workItem from="1666719569223" duration="6646000" />
-      <workItem from="1667296111149" duration="11010000" />
-      <workItem from="1667327852061" duration="4138000" />
-      <workItem from="1667335455571" duration="6793000" />
-      <workItem from="1667760631364" duration="9304000" />
+      <updated>1667842542812</updated>
+      <workItem from="1667842544497" duration="769000" />
+      <workItem from="1667843332058" duration="12734000" />
+      <workItem from="1667903045932" duration="490000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/mmse/MMseService.java</url>
-          <line>30</line>
+          <url>file://$PROJECT_DIR$/src/main/java/tests/services/UsersServiceLoginTests.java</url>
+          <line>25</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/tests/services/UsersServiceLoginTests.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/seed/UsersFactory.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/seed/UsersFactory.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/UserRepository.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/UserRepository.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/tests/services/UsersServiceLoginTests.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/tests/services/UsersServiceLoginTests.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/user/UsersService.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/validators/EmailValidatorService.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/user/UsersService.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/validators/EmailValidatorService.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/controllers/AuthController.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/filters/AuthorizationFilter.java</url>
+          <line>79</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/controllers/MmseTestsController.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/controllers/AuthController.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/controllers/AuthController.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/controllers/MmseTestsController.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/filters/AuthorizationFilter.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/filters/AuthorizationFilter.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/filters/AuthorizationFilter.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/controllers/MmseTestsController.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/controllers/MmseTestsController.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="email.matches(regex)" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

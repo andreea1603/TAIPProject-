@@ -1,15 +1,10 @@
 package com.example.neurodiagnosis.application.service.mmse;
 
-import com.example.neurodiagnosis.application.interfaces.email.IEmailService;
 import com.example.neurodiagnosis.application.interfaces.repositories.IMmseTestResultsRepository;
-import com.example.neurodiagnosis.application.interfaces.repositories.IUserRepository;
-import com.example.neurodiagnosis.application.service.user.IPasswordHashGeneratorService;
-import com.example.neurodiagnosis.application.service.validators.IEmailValidatorService;
-import com.example.neurodiagnosis.infrastructure.repositories.MmseTestResultsRepository;
+import com.example.neurodiagnosis.domain.entities.TestResult;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
-import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
@@ -27,7 +22,7 @@ public class MMseService implements IMmseService, Serializable {
         this.mmseTestResultsRepository = MmseTestResultsRepository;
     }
     @Override
-    public boolean submitTestResults(UUID userId, Date dateTimeOffset, int score) {
+    public TestResult submitTestResults(UUID userId, Date dateTimeOffset, int score) {
             return this.mmseTestResultsRepository.addNewTestResultsEntry(userId, dateTimeOffset, score);
     }
 }

@@ -4,16 +4,26 @@
 
     <persistence-unit name="NeuroDiagnosis">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-        <class>com.example.neurodiagnosis.domain.entities.User</class>
-        <class>com.example.neurodiagnosis.domain.entities.TestResult</class>
-        <class>com.example.neurodiagnosis.domain.entities.Mri</class>
-        <class>com.example.neurodiagnosis.domain.entities.Question</class>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver" />
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://ec2-34-242-84-130.eu-west-1.compute.amazonaws.com:5432/d8cteo2mmbc66r" />
-            <property name="jakarta.persistence.jdbc.user" value="bamdmkamagclut" />
-            <property name="jakarta.persistence.jdbc.password" value="neuro" />
-            <property name="jakarta.persistence.schema-generation.database.action" value="create"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/live" />
+            <property name="jakarta.persistence.jdbc.user" value="postgres" />
+            <property name="jakarta.persistence.jdbc.password" value="password" />
+            <property name="eclipselink.ddl-generation" value="create-or-extend-tables"/>
+        </properties>
+
+    </persistence-unit>
+
+    <persistence-unit name="NeuroDiagnosisTests">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver" />
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/tests" />
+            <property name="jakarta.persistence.jdbc.user" value="postgres" />
+            <property name="jakarta.persistence.jdbc.password" value="password" />
+            <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
         </properties>
 
     </persistence-unit>
