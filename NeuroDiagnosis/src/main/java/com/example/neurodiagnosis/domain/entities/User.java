@@ -25,8 +25,29 @@ public class User extends BaseEntity {
     private Date birthDate;
     private Boolean gender;
 
+    // Address info: fields used in test
+    private String country;
+    private String province;
+    private String city;
+
     public User (UUID userId) {
         super(userId);
+    }
+
+    public User(UUID id, String emailAddress, String passwordHash, Boolean handedness, String phoneNumber, String firstName, String username, String lastName, Date birthDate, Boolean gender, String country, String province, String city) {
+        super(id);
+        this.emailAddress = emailAddress;
+        this.passwordHash = passwordHash;
+        this.handedness = handedness;
+        this.phoneNumber = phoneNumber;
+        this.firstName = firstName;
+        this.username = username;
+        this.lastName = lastName;
+        this.birthDate = birthDate;
+        this.gender = gender;
+        this.country = country;
+        this.province = province;
+        this.city = city;
     }
 
     public User(String emailAddress, String passwordHash, Boolean handedness, String phoneNumber, String firstName, String username, String lastName, Date birthDate, Boolean gender, UUID userId) {
@@ -126,5 +147,47 @@ public class User extends BaseEntity {
 
     public void setGender(Boolean gender) {
         this.gender = gender;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "emailAddress='" + emailAddress + '\'' +
+                ", passwordHash='" + passwordHash + '\'' +
+                ", handedness=" + handedness +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", username='" + username + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", birthDate=" + birthDate +
+                ", gender=" + gender +
+                ", country='" + country + '\'' +
+                ", province='" + province + '\'' +
+                ", city='" + city + '\'' +
+                '}';
     }
 }

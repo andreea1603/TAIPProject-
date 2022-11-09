@@ -8,6 +8,7 @@ import java.util.UUID;
 public interface IUserRepository {
     User createUser(String username, String lastName, String firstName, String email, String passwordHash);
     User updateUserPassword(UUID userId, String passwordHash);
+    Optional<User> findById(UUID userId);
     Optional<User> findByEmail(String email);
     Optional<User> findByUsername(String userName);
     void deleteUserAccount(UUID userId);

@@ -50,6 +50,14 @@ public class UserRepository extends BaseRepository
         return null;
     }
 
+    public Optional<User> findById(UUID id) {
+        try {
+            return Optional.of(em.find(User.class, id));
+        } catch (Exception exception) {
+            return Optional.empty();
+        }
+    }
+
     @Override
     public Optional<User> findByEmail(String email) {
 

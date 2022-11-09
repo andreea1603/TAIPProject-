@@ -1,9 +1,7 @@
 package com.example.neurodiagnosis.domain.entities;
 
 import com.example.neurodiagnosis.domain.shared.BaseEntity;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Lob;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +9,9 @@ import java.sql.Blob;
 import java.util.UUID;
 @Entity
 @Table(name="question")
+@NamedQueries({
+        @NamedQuery(name = "Question.getAll", query = "SELECT q FROM Question q")
+})
 public class Question extends BaseEntity {
     private String question;
     private String response;

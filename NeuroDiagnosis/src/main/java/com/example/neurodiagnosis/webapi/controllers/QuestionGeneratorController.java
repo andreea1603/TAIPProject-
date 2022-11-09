@@ -16,7 +16,7 @@ import jakarta.ws.rs.*;
 import java.sql.Blob;
 
 @Path("/question/")
-
+//http://localhost:8080/NeuroDiagnosis-1.0-SNAPSHOT/api/question/question1
 public class QuestionGeneratorController {
     private final IQuestionService _questionService;
 
@@ -33,14 +33,12 @@ public class QuestionGeneratorController {
     @Consumes("application/json")
     @Produces("application/json")
     public String submitMriScan() {
-        QuestionService questionService= new QuestionService(new QuestionRepository( new DatabaseContextTests()));
-        Question q = questionService.addNewQuestion("Hello?",
-                "Yes","No","nope", null);
+        QuestionService questionService = new QuestionService(new QuestionRepository( new DatabaseContextTests()));
         questionService.addNewQuestion("What year is this?", null, null, null, null);
         questionService.addNewQuestion("What season is this?", null, null, null, null);
-        questionService.addNewQuestion("What month is this?", null, null, null, null);
+        questionService.addNewQuestion("What month is this (as a number)?", null, null, null, null);
         questionService.addNewQuestion("What is today's date?", null, null, null,null);
-        questionService.addNewQuestion("What day of the week is this??", null, null, null,null);
+        questionService.addNewQuestion("What day of the week is this?", null, null, null,null);
         questionService.addNewQuestion("What country are you from?", null, null, null, null);
         questionService.addNewQuestion("What province are you from?", null, null, null,null);
         questionService.addNewQuestion("What city are you from?", null, null, null,null);
@@ -59,6 +57,6 @@ public class QuestionGeneratorController {
         questionService.addNewQuestion("Remember this drawing and pick the correct answer from the next options",
                 "no ifs, ands or buts","no ands or buts","no ands or buts and ifs", null);
 
-        return q.getQuestion() + q.getResponse();
+        return "OK";
     }
 }
