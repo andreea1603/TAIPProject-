@@ -10,57 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37f3fcd6-a0ff-4019-a84e-130639b53af3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../NeuroDiagnosis.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/database/DatabaseContextTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/database/IDatabaseContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/base/BaseRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/seed/UsersFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/annotations/EnforcesUserAuthorization.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/filters/AuthorizationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/security/AuthSecurityContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/security/UserPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.NeuroDiagnosis.dir/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.NeuroDiagnosis.dir/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.NeuroDiagnosis.dir/.idea/indexLayout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.NeuroDiagnosis.dir/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/NeuroDiagnosis_ear_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/NeuroDiagnosis_ejb_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/NeuroDiagnosis_war.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/NeuroDiagnosis_war_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2022-10-25T215954.404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/GlassFish_5_2022_31.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/verification/mop/monitor1/AuthenticateBeforeAccesingResources.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/verification/mop/monitor1/EnforceAuthorizationBeforeAccessingPrivateDataMOP.mop" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/verification/mop/monitor1/SecuredResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/verification/mop/monitor1/TestResultsResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/interfaces/repositories/IMmseTestResultsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/interfaces/repositories/IMmseTestResultsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/interfaces/repositories/IUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/interfaces/repositories/IUserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/database/DatabaseContextLive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/mmse/IMmseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/mmse/IMmseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/mmse/MMseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/mmse/MMseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/user/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/user/JwtService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/user/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/user/UsersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/validators/EmailValidatorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/validators/EmailValidatorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/domain/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/domain/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/domain/entities/TestResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/domain/entities/TestResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/MmseTestResultsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/MmseTestResultsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/MriScansRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/MriScansRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/controllers/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/controllers/MmseTestsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/controllers/MmseTestsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/dtos/RegisterRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/dtos/RegisterRequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/dtos/SubmitTestResultRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/dtos/SubmitTestResultRequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/dtos/TestResultDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/dtos/TestResultDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/middlewares/AuthenticationMiddleware.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tests/repositories/MriScansRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/repositories/MriScansRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tests/services/AlzheimerPredictionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/services/AlzheimerPredictionTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tests/services/EmailValidatorServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/services/EmailValidatorServiceTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tests/services/MMseServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/services/MMseServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tests/services/MriScansServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/services/MriScansServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tests/services/UsersServiceLoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/services/UsersServiceLoginTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tests/services/UsersServiceRegisterTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/services/UsersServiceRegisterTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/tobedeleted.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,24 +76,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/zero6/Desktop/neurodiagnosis/TAIPProject-/NeuroDiagnosis/src/test/java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.32988507&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/zero6/Desktop/neurodiagnosis/TAIPProject-/NeuroDiagnosis/src/test/java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.32988507",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\zero6\Desktop\neurodiagnosis\TAIPProject-\NeuroDiagnosis\src\test\java" />
@@ -297,6 +255,7 @@
       <workItem from="1667842544497" duration="769000" />
       <workItem from="1667843332058" duration="12734000" />
       <workItem from="1667903045932" duration="490000" />
+      <workItem from="1669105146271" duration="2694000" />
     </task>
     <servers />
   </component>
@@ -395,21 +354,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/controllers/MmseTestsController.java</url>
           <line>43</line>
           <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/filters/AuthorizationFilter.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/filters/AuthorizationFilter.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/filters/AuthorizationFilter.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/webapi/controllers/MmseTestsController.java</url>

@@ -1,0 +1,30 @@
+package mop;
+
+import java.io.*;
+import java.util.*;
+
+
+
+
+EnforceAuthorizationBeforeAccessingPrivateDataMOP(TestResultsResource tr) {
+    event authorize after(TestResultsResource tr) : call(* TestResultsResource.authorize()) && target(tr) {}
+    event accessResource before(TestResultsResource tr) : call(* TestResultsResource.getTestResults()) && target(tr) {}
+    ptltl : accessResource implies (*) authorize
+
+    @violation {
+        System.out.println("Authorization should be attempted before accessing the resource");
+    }
+}
+
+
+
+    // // // /*@
+    // // //     class-scoped EnforceAuthorizationBeforeAccessingPrivateDataMOP() {
+    // // //         event authorize : after(exec(* authorize()))
+    // // //         event access : before(exec(* getTestResults()))
+    // // //         ptltl : access -> <*> authorize
+    // // //         violation {
+    // // //            System.out.println("Login failed. Invalid token");
+    // // //         }
+    // // //     }
+    // // // @*/

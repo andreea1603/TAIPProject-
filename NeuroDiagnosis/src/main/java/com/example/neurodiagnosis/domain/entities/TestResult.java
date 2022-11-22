@@ -1,12 +1,15 @@
 package com.example.neurodiagnosis.domain.entities;
 
 import com.example.neurodiagnosis.domain.shared.BaseEntity;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.Date;
 import java.util.UUID;
 @Entity
+@NamedQueries(value = {
+        @NamedQuery(name="TestResult.getTestResultsForUser",
+                query = "select tr from TestResult tr where tr.userId = :userId")
+})
 @Table(name="testResult")
 public class TestResult extends BaseEntity {
     private Integer testResult;
