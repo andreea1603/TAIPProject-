@@ -17,6 +17,12 @@ public class ValidationMOP {
                     }};
         Path fileName
                 = Path.of("src/main/java/com/example/neurodiagnosis/verification/mop/Test2.java");
+
+//        Path fileName
+//                = Path.of("src/main/java/com/example/neurodiagnosis/verification/mop/Test.java");
+
+//        Path fileName = Path.of("src/main/java/com/example/neurodiagnosis/verification/mop/monitor3/TestIteratorRule.java");
+
         String fileContent = Files.readString(fileName);
         String[] arrOfStr = fileContent.split("[; .!]+");
         for ( int i=0; i< arrOfStr.length; i++ ) {

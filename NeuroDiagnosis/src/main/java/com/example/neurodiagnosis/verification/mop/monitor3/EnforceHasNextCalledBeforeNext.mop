@@ -1,0 +1,17 @@
+package mop;
+
+import java.io.*;
+import java.util.*;
+
+
+ExistHasNextBeforeNext(Iterator i){
+    event hasNext after(Iterator i) : call(*Iterator.hasNext()) && target(i){}
+    event next before(Iterator i) : call(*Iterator.next()) && target(i){}
+
+    ptltl : next implies (*) hasNext
+
+    @violation {
+              System.out.println("Next called without HasNext!");
+            }
+
+}
