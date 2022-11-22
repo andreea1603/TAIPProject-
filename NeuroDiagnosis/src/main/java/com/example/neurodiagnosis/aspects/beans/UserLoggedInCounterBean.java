@@ -1,10 +1,11 @@
 package com.example.neurodiagnosis.aspects.beans;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.ejb.Singleton;
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Named;
 
-import javax.annotation.PostConstruct;
-import javax.ejb.Singleton;
-import javax.inject.Named;
+
 import java.io.Serializable;
 
 @Singleton
