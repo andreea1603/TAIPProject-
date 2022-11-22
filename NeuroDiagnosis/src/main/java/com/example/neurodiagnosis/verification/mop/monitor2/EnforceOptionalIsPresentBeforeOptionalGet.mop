@@ -1,0 +1,17 @@
+package mop;
+
+import java.io.*;
+import java.util.*;
+
+
+Exist(Optional opt){
+    event isPresent after(Optional opt) : call(*Optional.isPresent()) && target(opt){}
+    event get before(Optional opt) : call(*Optional.get()) && target(opt){}
+
+    ptltl : get implies (*) isPresent
+
+    @violation {
+              System.out.println("get called without isPresent!");
+            }
+
+}
