@@ -16,9 +16,9 @@ public class ValidationMOP {
                         put("authorize(*)", "access(*)");
                     }};
         Path fileName
-                = Path.of("src/main/java/com/example/neurodiagnosis/verification/mop/Test.java");
+                = Path.of("src/main/java/com/example/neurodiagnosis/verification/mop/Test2.java");
         String fileContent = Files.readString(fileName);
-        String[] arrOfStr = fileContent.split("[; .]");
+        String[] arrOfStr = fileContent.split("[; .!]+");
         for ( int i=0; i< arrOfStr.length; i++ ) {
             if (validatePairs.containsValue(arrOfStr[i]) ) {
                 boolean ok = false;
