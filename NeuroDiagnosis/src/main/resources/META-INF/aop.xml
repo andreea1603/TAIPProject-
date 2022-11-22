@@ -1,0 +1,13 @@
+<aspectj>
+    <aspects>
+        <aspect name="com.example.neurodiagnosis.aspects.InterceptorLoginAspect"/>
+
+    <!--  <weaver options="-verbose -debug -showWeaveInfo"> -->
+    <weaver options="-verbose -showWeaveInfo">
+        <include within="com.example.neurodiagnosis.webapi.controllers.*" />
+        <include within="com.example.neurodiagnosis.aspects.*" />
+    </weaver>
+
+    </aspects>
+
+</aspectj>
