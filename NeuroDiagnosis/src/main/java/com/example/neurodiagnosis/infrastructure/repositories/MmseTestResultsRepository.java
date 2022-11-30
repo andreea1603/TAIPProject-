@@ -30,6 +30,7 @@ public class MmseTestResultsRepository extends BaseRepository
             testResult.setUserId(userId);
             testResult.setTestResult(score);
             testResult.setTestDate(dateTimeOffset);
+            testResult.setId(UUID.randomUUID());
 
             if(!em.getTransaction().isActive()){
                 em.getTransaction().begin();

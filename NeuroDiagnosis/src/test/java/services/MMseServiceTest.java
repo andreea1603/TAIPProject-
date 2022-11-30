@@ -55,7 +55,7 @@ public class MMseServiceTest {
         //Arrange
         IMmseTestResultsRepository mmseTestResultsRepository =
                 new MmseTestResultsRepository(new DatabaseContextTests());
-        UUID userId = new UUID(8, 8);
+        UUID userId = UUID.randomUUID();
         Date date = new Date(2022, Calendar.MARCH, 2);
 
         IMmseService mmseService = new MMseService(mmseTestResultsRepository);

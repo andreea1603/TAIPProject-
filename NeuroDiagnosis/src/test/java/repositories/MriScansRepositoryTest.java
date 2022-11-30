@@ -48,12 +48,4 @@ public class MriScansRepositoryTest {
         assertEquals(mri.getUserId(), resultMri.getUserId());
 
     }
-
-    @Test
-    void addNewScanEntryMriTest() {
-        var repository = new MriScansRepository(new DatabaseContextTests());
-        Mri resultMri = repository.addNewScanEntry(USER_ID, MINE_TYPE);
-
-        assertEquals(mri, resultMri);
-    }
 }

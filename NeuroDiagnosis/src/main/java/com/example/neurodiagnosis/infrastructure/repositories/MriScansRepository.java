@@ -27,6 +27,8 @@ public class MriScansRepository extends BaseRepository
     public Mri addNewScanEntry(UUID usedId, File photo){
         Mri mri = new Mri();
         mri.setUserId(usedId);
+        mri.setId(UUID.randomUUID());
+
         try {
             mri.setImage(Files.readAllBytes(photo.toPath()));
         }catch (Exception e){

@@ -56,7 +56,7 @@ public class UsersService implements  IUsersService, Serializable {
 
         var userToLogin = user.get();
 
-        var passwordHash = passwordHashGeneratorService.calculateHash(password);
+        var passwordHash = passwordHashGeneratorService.calculateHash(password, "SHA-256");
 
         if (!userToLogin.getPasswordHash().equals(passwordHash)) {
             return Optional.empty();
@@ -82,13 +82,9 @@ public class UsersService implements  IUsersService, Serializable {
             return Optional.empty();
         }
 
-        var passwordHash = passwordHashGeneratorService.calculateHash(password);
+        var passwordHash = passwordHashGeneratorService.calculateHash(password, "SHA-256");
 
         var newUser = userRepository.createUser(username, lastName, firstName, email, passwordHash);
-
-        if (newUser == null) {
-            return Optional.empty();
-        }
 
         return Optional.of(newUser);
     }

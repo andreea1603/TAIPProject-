@@ -21,7 +21,7 @@ import java.util.UUID;
 @Path("/mmse/")
 public class MmseTestsController {
     @Context
-    SecurityContext securityContext;
+    public SecurityContext securityContext;
 
     private IMmseService _mmseService;
     @Inject

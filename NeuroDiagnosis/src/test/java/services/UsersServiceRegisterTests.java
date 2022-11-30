@@ -91,12 +91,42 @@ class UsersServiceRegisterTests {
         IEmailValidatorService emailValidatorServiceMock = Mockito.mock(IEmailValidatorService.class);
         IEmailService emailServiceMock = Mockito.mock(IEmailService.class);
 
-        Mockito.doNothing().when(emailServiceMock).sendTemplatedEmail(Matchers.any(), Matchers.any(), Matchers.any(), Matchers.any());
+        Mockito.doNothing().when(emailServiceMock)
+                .sendTemplatedEmail(Matchers.any(), Matchers.any(), Matchers.any(), Matchers.any());
 
         Mockito.doReturn(false).when(emailValidatorServiceMock)
                 .validateEmail(registerRequest.getEmailAddress());
 
-        IUsersService usersService = new UsersService(new UserRepository(new DatabaseContextTests()), emailServiceMock, emailValidatorServiceMock, new PasswordHashGeneratorService());
+        IUsersService usersService = new UsersService(new UserRepository(new DatabaseContextTests()),
+                emailServiceMock, emailValidatorServiceMock, new PasswordHashGeneratorService());
+
+        //Act
+        var response = usersService.registerUser(registerRequest.getUsername(),
+                registerRequest.getLastName(),
+                registerRequest.getFirstName(),
+                registerRequest.getEmailAddress(),
+                registerRequest.getPassword());
+
+        //Assert
+        assertFalse(response.isPresent());
+    }
+
+
+    @Test
+    void givenUserServiceRegister__whenUserRequestRegisterAndPasswordTooSmall__shouldNotRegisterUser() {
+        //Arrange
+
+        var registerRequest = new RegisterRequestDTO("emailInvalid@gmail.com", "usernameNou",
+                "firstName", "lastName", "shortpw", "07777777");
+
+        IEmailValidatorService emailValidatorServiceMock = new EmailValidatorService();
+
+        IEmailService emailServiceMock = Mockito.mock(IEmailService.class);
+        Mockito.doNothing().when(emailServiceMock)
+                .sendTemplatedEmail(Matchers.any(), Matchers.any(), Matchers.any(), Matchers.any());
+
+        IUsersService usersService = new UsersService(new UserRepository(new DatabaseContextTests()),
+                emailServiceMock, emailValidatorServiceMock, new PasswordHashGeneratorService());
 
         //Act
         var response = usersService.registerUser(registerRequest.getUsername(),

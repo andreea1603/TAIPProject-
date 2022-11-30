@@ -15,11 +15,7 @@ import java.util.Optional;
 @Path("/auth/")
 public class AuthController {
 
-    private final IUsersService _userService;
-    public AuthController() {
-        //TODO: Resolve din containerul de IoC
-        _userService = null;
-    }
+    private IUsersService _userService;
     @Inject
     public AuthController(@Named("usersService") IUsersService userService) {
         _userService = userService;
@@ -33,7 +29,7 @@ public class AuthController {
 
         Optional<String> jwtToken = _userService.loginUser(loginRequestDTO.userNameOrEmail, loginRequestDTO.password);
 
-        if (!jwtToken.isPresent()) {
+        if (jwtToken.isEmpty()) {
             throw new Exception("Invalid credentials");
         }
 
@@ -46,30 +42,21 @@ public class AuthController {
     @Produces("application/json")
     public ApplicationUserDTO registerUser(final RegisterRequestDTO registerRequestDTO) throws Exception {
 
-        var userOpt = _userService.registerUser(registerRequestDTO.getUsername(), registerRequestDTO.getFirstName(),
-                registerRequestDTO.getLastName(), registerRequestDTO.getEmailAddress(), registerRequestDTO.getPassword()
+        var userOpt = _userService.registerUser(registerRequestDTO.getUsername(),
+                registerRequestDTO.getFirstName(),
+                registerRequestDTO.getLastName(),
+                registerRequestDTO.getEmailAddress(),
+                registerRequestDTO.getPassword()
                 );
 
-        if (!userOpt.isPresent()) {
+        if (userOpt.isEmpty()) {
             throw new Exception("Couldn't register user!");
         }
 
         var user = userOpt.get();
 
-        return new ApplicationUserDTO(user.getId(), user.getEmailAddress(), user.getPhoneNumber(), user.getFirstName(), user.getUsername(),
+        return new ApplicationUserDTO(user.getId(), user.getEmailAddress(),
+                user.getPhoneNumber(), user.getFirstName(), user.getUsername(),
                 user.getLastName());
     }
-
-    @GET
-    @Path("resource")
-    @Consumes("application/json")
-    @Produces("application/json")
-    @EnforcesUserAuthorization
-    public ApplicationUserDTO resource() {
-
-        return new ApplicationUserDTO();
-    }
-
-
-
 }
