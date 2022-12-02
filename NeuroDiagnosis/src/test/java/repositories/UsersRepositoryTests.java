@@ -41,7 +41,7 @@ public class UsersRepositoryTests {
         var userFound = userRepo.findById(userToSearch.getId()).orElseThrow();
 
         //ASSERT
-        assertEquals(userFound, userFound);
+        assertEquals(userFound, userToSearch);
     }
 
 
