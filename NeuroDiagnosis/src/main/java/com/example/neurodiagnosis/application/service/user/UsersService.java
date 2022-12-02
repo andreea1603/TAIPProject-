@@ -62,7 +62,7 @@ public class UsersService implements  IUsersService, Serializable {
             return Optional.empty();
         }
 
-        return Optional.of(JwtService.createJWT(userToLogin, "javaApppUrl", "reactFeUrl"));
+        return Optional.of(JwtService.createJWT(userToLogin));
     }
 
     @Override

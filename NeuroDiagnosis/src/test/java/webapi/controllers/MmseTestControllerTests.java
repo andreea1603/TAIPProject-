@@ -32,7 +32,9 @@ public class MmseTestControllerTests {
     public void givenMmseController__WhenSubmitRequestedWithValidData__ShouldThrow() {
 
         //ARRANGE
-        var userFromSeed = new UserRepository(new DatabaseContextTests()).findByUsername("User").get();
+        var userFromSeed = new UserRepository(new DatabaseContextTests())
+                .findByUsername("User").get();
+
         UserPrincipal requestingUserPrincipal = new UserPrincipal(userFromSeed.getId(), userFromSeed.getUsername(),
                 userFromSeed.getEmailAddress());
 

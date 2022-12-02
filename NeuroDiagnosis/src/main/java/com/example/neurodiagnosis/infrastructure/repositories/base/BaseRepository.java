@@ -2,8 +2,10 @@ package com.example.neurodiagnosis.infrastructure.repositories.base;
 
 import com.example.neurodiagnosis.application.service.database.IDatabaseContext;
 import jakarta.persistence.EntityManager;
+import lombok.Getter;
 
-public class BaseRepository {
+@Getter
+public class BaseRepository implements IRepository{
     protected EntityManager em;
     private IDatabaseContext databaseContext;
 
@@ -14,4 +16,8 @@ public class BaseRepository {
         this.em = databaseContext.getEntity();
     }
 
+    @Override
+    public EntityManager getEntityManager() {
+        return this.em;
+    }
 }

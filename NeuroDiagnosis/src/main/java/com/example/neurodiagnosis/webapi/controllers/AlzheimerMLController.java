@@ -14,7 +14,6 @@ public class AlzheimerMLController {
     private final IAlzheimerPredictorFromMriScanService _alzheimerPredictorFromMriScan;
 
     public AlzheimerMLController() {
-        //TODO: Resolve din containerul de IoC
         _alzheimerPredictorFromMriScan = null;
     }
     public AlzheimerMLController(IAlzheimerPredictorFromMriScanService alzheimerPredictorFromMriScan) {
@@ -26,7 +25,6 @@ public class AlzheimerMLController {
     @Consumes("application/json")
     @Produces("application/json")
     public TestResultDTO predictAlzheimers(final MriScanDTO mriScanDTO) {
-
         return new TestResultDTO();
     }
 

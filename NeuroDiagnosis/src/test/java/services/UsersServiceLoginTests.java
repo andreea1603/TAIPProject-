@@ -31,7 +31,8 @@ class UsersServiceLoginTests {
     }
 
     @AfterEach
-    void tearDown() {
+    void clear() {
+        new UsersFactory(new UserRepository(new DatabaseContextTests())).clearData();
     }
 
     @Test

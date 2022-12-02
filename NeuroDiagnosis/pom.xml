@@ -29,6 +29,7 @@
         <!-- NU folosim Rich models ci get / set shallow - nu trebuie testate -->
         <sonar.exclusions>src/java/test/**,
             src/main/java/com/example/neurodiagnosis/domain/entities/**,
+            src/main/java/com/example/neurodiagnosis/domain/shared/**,
             src/main/java/com/example/neurodiagnosis/domain/models/**,
             src/main/java/com/example/neurodiagnosis/webapi/dtos/**,
             src/main/java/com/example/neurodiagnosis/aspects/**,

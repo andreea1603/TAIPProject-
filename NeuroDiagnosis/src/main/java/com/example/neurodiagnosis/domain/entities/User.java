@@ -7,6 +7,7 @@ import lombok.Setter;
 
 
 import java.util.Date;
+import java.util.Objects;
 import java.util.UUID;
 @Entity
 @Table(name="users", uniqueConstraints=
@@ -96,5 +97,18 @@ public class User extends BaseEntity {
                 ", province='" + province + '\'' +
                 ", city='" + city + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return emailAddress.equals(user.emailAddress) && passwordHash.equals(user.passwordHash) && Objects.equals(handedness, user.handedness) && Objects.equals(phoneNumber, user.phoneNumber) && firstName.equals(user.firstName) && username.equals(user.username) && lastName.equals(user.lastName) && Objects.equals(birthDate, user.birthDate) && Objects.equals(gender, user.gender) && Objects.equals(country, user.country) && Objects.equals(province, user.province) && Objects.equals(city, user.city);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(emailAddress, passwordHash, handedness, phoneNumber, firstName, username, lastName, birthDate, gender, country, province, city);
     }
 }

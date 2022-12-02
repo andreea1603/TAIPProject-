@@ -13,14 +13,16 @@ import java.util.UUID;
 
 public class JwtService {
     private static final String SIGNING_KEY = "somehing16bytesplus";
+    private static final String ISSUER = "javaApppUrl";
+    private static final String AUDIENCE = "reactFeUrl";
     private static final Algorithm algorithm = Algorithm.HMAC256(SIGNING_KEY);
 
 
-    public static String createJWT(User user, String issuer, String audience) {
+    public static String createJWT(User user) {
 
         return JWT.create()
-                .withIssuer(issuer)
-                .withAudience(audience)
+                .withIssuer(ISSUER)
+                .withAudience(AUDIENCE)
                 .withJWTId(UUID.randomUUID().toString())
                 .withClaim("userId", user.getId().toString())
                 .withClaim("userEmail", user.getEmailAddress())
