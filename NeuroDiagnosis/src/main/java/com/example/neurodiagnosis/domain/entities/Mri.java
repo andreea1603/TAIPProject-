@@ -6,6 +6,7 @@ import java.util.UUID;
 @Entity
 @Table(name="mri")
 public class Mri extends BaseEntity {
+
     private UUID userId;
     @Lob
     private byte[] image;

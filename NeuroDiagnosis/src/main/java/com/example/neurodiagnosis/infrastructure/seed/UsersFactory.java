@@ -28,4 +28,12 @@ public class UsersFactory implements Serializable {
         //hash la "someGibberish"
         this.userRepository.createUser("User", "P.", "Nicu", "emailexistent1@gmail.com", "42876cc421d0212402f950f4fab255e329dd5e204439cbca2f0d8ed027d77822");
     }
+
+    public void clearData() {
+        this.userRepository.getEntityManager().getTransaction().begin();
+
+        this.userRepository.getEntityManager().createNativeQuery("DELETE FROM users").executeUpdate();
+
+        this.userRepository.getEntityManager().getTransaction().commit();
+    }
 }

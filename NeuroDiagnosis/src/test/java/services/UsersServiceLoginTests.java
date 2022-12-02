@@ -31,10 +31,10 @@ class UsersServiceLoginTests {
     }
 
     @AfterEach
-    void tearDown() {
+    void clear() {
+        new UsersFactory(new UserRepository(new DatabaseContextTests())).clearData();
     }
 
-    ///Login
     @Test
     void givenUserServiceLogin__whenUserRequestLoginAndPasswordIsIncorrect__shouldRejectLoginRequestAndReturnNoJwt() {
         //Arange
@@ -51,11 +51,25 @@ class UsersServiceLoginTests {
 
 
     @Test
-    void givenUserServiceLogin__whenUserRequestLoginAndPasswordIsCorrect__shouldAcceptLoginRequestAndReturnJwt() {
+    void givenUserServiceLogin__whenUserRequestLoginByEmailAndPasswordIsCorrect__shouldAcceptLoginRequestAndReturnJwt() {
         //Arange
         IUsersService usersService = new UsersService(new UserRepository(new DatabaseContextTests()), new EmailService(), new EmailValidatorService(), new PasswordHashGeneratorService());
 
         var loginRequest = new LoginRequestDTO("emailexistent1@gmail.com", "someGibberish");
+
+        //Act
+        var jwt = usersService.loginUser(loginRequest.userNameOrEmail, loginRequest.password);
+
+        //Assert
+        assertTrue(jwt.isPresent());
+    }
+
+    @Test
+    void givenUserServiceLogin__whenUserRequestLoginByUsernameAndPasswordIsCorrect__shouldAcceptLoginRequestAndReturnJwt() {
+        //Arange
+        IUsersService usersService = new UsersService(new UserRepository(new DatabaseContextTests()), new EmailService(), new EmailValidatorService(), new PasswordHashGeneratorService());
+
+        var loginRequest = new LoginRequestDTO("User", "someGibberish");
 
         //Act
         var jwt = usersService.loginUser(loginRequest.userNameOrEmail, loginRequest.password);

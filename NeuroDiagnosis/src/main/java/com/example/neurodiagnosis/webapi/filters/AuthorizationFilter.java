@@ -16,6 +16,7 @@ import jakarta.ws.rs.ext.Provider;
 
 import java.io.IOException;
 import java.util.Map;
+import java.util.Optional;
 import java.util.UUID;
 
 @EnforcesUserAuthorization
@@ -29,65 +30,68 @@ public class AuthorizationFilter implements ContainerRequestFilter {
     @Override
     public void filter(ContainerRequestContext requestContext) throws IOException {
 
-        // Get the Authorization header from the request
         String authorizationHeader =
                 requestContext.getHeaderString(HttpHeaders.AUTHORIZATION);
 
-        // Validate the Authorization header
+        String token = authorizationHeader
+                .substring(AUTHENTICATION_SCHEME.length()).trim();
+
         if (!isTokenBasedAuthentication(authorizationHeader)) {
             abortWithUnauthorized(requestContext);
             return;
         }
 
-        // Extract the token from the Authorization header
-        String token = authorizationHeader
-                .substring(AUTHENTICATION_SCHEME.length()).trim();
+        var authorizedUser = validateAuthorization(token);
 
-        try {
-
-            // Validate the token
-            var claims = validateToken(token);
-
-            var userId = claims.get("userId").asString();
-            var userEmail = claims.get("userEmail").asString();
-            var userName = claims.get("userName").asString();
-
-            requestContext
-                    .setSecurityContext(new AuthSecurityContext(
-                            new UserPrincipal(UUID.fromString(userId), userName, userEmail)
-                    ));
-
-
-        } catch (Exception e) {
+        if (authorizedUser.isPresent()) {
+            acceptAuthorization(requestContext, authorizedUser.get());
+        } else {
             abortWithUnauthorized(requestContext);
         }
-
     }
 
-    private boolean isTokenBasedAuthentication(String authorizationHeader) {
 
-        // Check if the Authorization header is valid
-        // It must not be null and must be prefixed with "Bearer" plus a whitespace
-        // The authentication scheme comparison must be case-insensitive
+    public boolean isTokenBasedAuthentication(String authorizationHeader) {
+
         return authorizationHeader != null && authorizationHeader.toLowerCase()
                 .startsWith(AUTHENTICATION_SCHEME.toLowerCase() + " ");
     }
 
-    private void abortWithUnauthorized(ContainerRequestContext requestContext) {
+    public Optional<UserPrincipal> validateAuthorization(String jwtToken) {
 
-        // Abort the filter chain with a 401 status code response
-        // The WWW-Authenticate header is sent along with the response
-        requestContext.abortWith(
-                Response.status(Response.Status.UNAUTHORIZED)
-                        .header(HttpHeaders.WWW_AUTHENTICATE,
-                                AUTHENTICATION_SCHEME + " realm=\"" + REALM + "\"")
-                        .build());
+        try {
+
+            // Validate the token
+            var claims = validateToken(jwtToken);
+
+            var userId = claims.get("userId")
+                    .asString();
+
+            var userEmail = claims.get("userEmail")
+                    .asString();
+
+            var userName = claims.get("userName")
+                    .asString();
+
+            return Optional.of(new UserPrincipal(UUID.fromString(userId),
+                    userName, userEmail));
+
+        } catch (Exception e) {
+            return Optional.empty();
+        }
+    }
+
+    private void acceptAuthorization(ContainerRequestContext requestContext, UserPrincipal authorizedUser) {
+        requestContext.setSecurityContext(new AuthSecurityContext(authorizedUser));
+    }
+
+    private void abortWithUnauthorized(ContainerRequestContext requestContext) {
+        requestContext.abortWith(Response.status(Response.Status.UNAUTHORIZED)
+                .header(HttpHeaders.WWW_AUTHENTICATE, AUTHENTICATION_SCHEME + " realm=\"" + REALM + "\"")
+                .build());
     }
 
     private Map<String, Claim> validateToken(String token) throws Exception {
-        // Check if the token was issued by the server and if it's not expired
-        // Throw an Exception if the token is invalid
-        //TODO: DI
         Map<String, Claim> claims;
 
         try {

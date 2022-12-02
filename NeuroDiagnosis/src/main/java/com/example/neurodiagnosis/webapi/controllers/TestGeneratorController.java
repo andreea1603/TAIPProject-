@@ -3,7 +3,6 @@ package com.example.neurodiagnosis.webapi.controllers;
 import com.example.neurodiagnosis.application.service.test.ITestGeneratorService;
 import com.example.neurodiagnosis.application.service.test.TestGeneratorService;
 import com.example.neurodiagnosis.webapi.annotations.EnforcesUserAuthorization;
-import com.example.neurodiagnosis.webapi.dtos.test.QuestionDetailsDTO;
 import com.example.neurodiagnosis.webapi.dtos.test.TestDTO;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
@@ -19,7 +18,7 @@ import java.util.*;
 @Path("/test/")
 public class TestGeneratorController {
     @Context
-    SecurityContext securityContext;
+    public SecurityContext securityContext;
     private final ITestGeneratorService testGeneratorService;
 
     @Inject
@@ -36,7 +35,7 @@ public class TestGeneratorController {
     @Produces("application/json")
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @EnforcesUserAuthorization
-    public TestDTO submitMriScan() {
+    public TestDTO getTestForUser() {
         Principal userRequesting = securityContext.getUserPrincipal();
         UUID userId = UUID.fromString(userRequesting.getName());
 

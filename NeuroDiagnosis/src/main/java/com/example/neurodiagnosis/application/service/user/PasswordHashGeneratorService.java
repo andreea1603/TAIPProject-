@@ -14,10 +14,10 @@ public class PasswordHashGeneratorService implements IPasswordHashGeneratorServi
 
 
     @Override
-    public String calculateHash(String password) {
+    public String calculateHash(String password, String alg) {
         MessageDigest digest = null;
         try {
-            digest = MessageDigest.getInstance("SHA-256");
+            digest = MessageDigest.getInstance(alg);
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException(e);
         }

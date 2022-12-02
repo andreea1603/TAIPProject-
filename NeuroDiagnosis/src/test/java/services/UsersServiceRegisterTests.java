@@ -10,6 +10,7 @@ import com.example.neurodiagnosis.application.service.validators.EmailValidatorS
 import com.example.neurodiagnosis.application.service.validators.IEmailValidatorService;
 import com.example.neurodiagnosis.domain.entities.User;
 import com.example.neurodiagnosis.infrastructure.repositories.UserRepository;
+import com.example.neurodiagnosis.infrastructure.seed.UsersFactory;
 import com.example.neurodiagnosis.webapi.dtos.RegisterRequestDTO;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -35,7 +36,8 @@ class UsersServiceRegisterTests {
     }
 
     @AfterEach
-    void tearDown() {
+    void clear() {
+        new UsersFactory(new UserRepository(new DatabaseContextTests())).clearData();
     }
 
     @Test
@@ -91,12 +93,42 @@ class UsersServiceRegisterTests {
         IEmailValidatorService emailValidatorServiceMock = Mockito.mock(IEmailValidatorService.class);
         IEmailService emailServiceMock = Mockito.mock(IEmailService.class);
 
-        Mockito.doNothing().when(emailServiceMock).sendTemplatedEmail(Matchers.any(), Matchers.any(), Matchers.any(), Matchers.any());
+        Mockito.doNothing().when(emailServiceMock)
+                .sendTemplatedEmail(Matchers.any(), Matchers.any(), Matchers.any(), Matchers.any());
 
         Mockito.doReturn(false).when(emailValidatorServiceMock)
                 .validateEmail(registerRequest.getEmailAddress());
 
-        IUsersService usersService = new UsersService(new UserRepository(new DatabaseContextTests()), emailServiceMock, emailValidatorServiceMock, new PasswordHashGeneratorService());
+        IUsersService usersService = new UsersService(new UserRepository(new DatabaseContextTests()),
+                emailServiceMock, emailValidatorServiceMock, new PasswordHashGeneratorService());
+
+        //Act
+        var response = usersService.registerUser(registerRequest.getUsername(),
+                registerRequest.getLastName(),
+                registerRequest.getFirstName(),
+                registerRequest.getEmailAddress(),
+                registerRequest.getPassword());
+
+        //Assert
+        assertFalse(response.isPresent());
+    }
+
+
+    @Test
+    void givenUserServiceRegister__whenUserRequestRegisterAndPasswordTooSmall__shouldNotRegisterUser() {
+        //Arrange
+
+        var registerRequest = new RegisterRequestDTO("emailInvalid@gmail.com", "usernameNou",
+                "firstName", "lastName", "shortpw", "07777777");
+
+        IEmailValidatorService emailValidatorServiceMock = new EmailValidatorService();
+
+        IEmailService emailServiceMock = Mockito.mock(IEmailService.class);
+        Mockito.doNothing().when(emailServiceMock)
+                .sendTemplatedEmail(Matchers.any(), Matchers.any(), Matchers.any(), Matchers.any());
+
+        IUsersService usersService = new UsersService(new UserRepository(new DatabaseContextTests()),
+                emailServiceMock, emailValidatorServiceMock, new PasswordHashGeneratorService());
 
         //Act
         var response = usersService.registerUser(registerRequest.getUsername(),

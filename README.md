@@ -1,4 +1,9 @@
 ## NeuroDiagnosis
+
+[![Quality Gate Status](https://sonarqubeneurodiagnosis.azurewebsites.net/api/project_badges/measure?project=NeuroDiagnosis&metric=alert_status&token=0c713ec5a9b02c3215ad5edbc291ffca11bb47ed)](https://sonarqubeneurodiagnosis.azurewebsites.net/dashboard?id=NeuroDiagnosis)[![Maintainability Rating](https://sonarqubeneurodiagnosis.azurewebsites.net/api/project_badges/measure?project=NeuroDiagnosis&metric=sqale_rating&token=0c713ec5a9b02c3215ad5edbc291ffca11bb47ed)](https://sonarqubeneurodiagnosis.azurewebsites.net/dashboard?id=NeuroDiagnosis)[![Coverage](https://sonarqubeneurodiagnosis.azurewebsites.net/api/project_badges/measure?project=NeuroDiagnosis&metric=coverage&token=0c713ec5a9b02c3215ad5edbc291ffca11bb47ed)](https://sonarqubeneurodiagnosis.azurewebsites.net/dashboard?id=NeuroDiagnosis)[![Lines of Code](https://sonarqubeneurodiagnosis.azurewebsites.net/api/project_badges/measure?project=NeuroDiagnosis&metric=ncloc&token=0c713ec5a9b02c3215ad5edbc291ffca11bb47ed)](https://sonarqubeneurodiagnosis.azurewebsites.net/dashboard?id=NeuroDiagnosis)
+
+
+
 A mobile application for the diagnosis of Alzheimer's Disease and other neurodegenerative conditions
 https://drive.google.com/drive/u/1/folders/1V_obvODj0q1rkMPJ1OSHYKPFXnv1c_JM
 ### Coordinators: 

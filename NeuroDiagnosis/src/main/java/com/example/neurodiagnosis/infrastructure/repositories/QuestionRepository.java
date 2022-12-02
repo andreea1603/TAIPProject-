@@ -20,7 +20,8 @@ import java.util.UUID;
 
 @Named("questionRepository")
 @SessionScoped
-public class QuestionRepository extends BaseRepository implements IQuestionRepository, Serializable {
+public class QuestionRepository extends BaseRepository
+        implements IQuestionRepository, Serializable {
     @Inject
     public QuestionRepository(@Named("DatabaseContextLive") IDatabaseContext databaseContext) {
         super(databaseContext);

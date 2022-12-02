@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 public class InterceptorTestGeneratorAspect {
     static Logger LOG = Logger.getLogger(InterceptorTestGeneratorAspect.class.getName());
 
-    @Pointcut("execution(* com.example.neurodiagnosis.webapi.controllers.TestGeneratorController.submitMriScan())")
+    @Pointcut("execution(* com.example.neurodiagnosis.webapi.controllers.TestGeneratorController.getTestForUser())")
     public void loggingPointCut() {}
 
     @Before(value = "loggingPointCut()")
