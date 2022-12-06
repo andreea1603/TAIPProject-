@@ -13,6 +13,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Optional;
@@ -22,7 +23,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class MriScansControllerTests {
     @Test
-    public void givenMriScansController__whenSubmitScanIsRequestedWithValidData__ShouldReturnOkStatus() throws URISyntaxException {
+    public void givenMriScansController__whenSubmitScanIsRequestedWithValidData__ShouldReturnOkStatus() throws URISyntaxException, IOException {
         //ARRANGE
 
         var mriScansService = Mockito.mock(IMriScansService.class);

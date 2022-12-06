@@ -8,6 +8,7 @@ import jakarta.inject.Named;
 import lombok.NoArgsConstructor;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.UUID;
 @NoArgsConstructor
@@ -22,7 +23,7 @@ public class MriScansService implements IMriScansService, Serializable {
     }
 
     @Override
-    public Mri submitMriScan(UUID usedId, File mineType) {
+    public Mri submitMriScan(UUID usedId, File mineType) throws IOException {
         return mriScansRepository.addNewScanEntry(usedId, mineType);
     }
 }

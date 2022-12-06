@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.UUID;
@@ -32,7 +33,7 @@ public class MriScansServiceTest {
     private MriScansService mriScansService;
 
     @BeforeEach
-    void setUp() {
+    void setUp() throws IOException {
         Mri mri = new Mri();
         mri.setUserId(USER_ID);
 
@@ -49,7 +50,7 @@ public class MriScansServiceTest {
     }
 
     @Test
-    void addNewScanEntryTest() {
+    void addNewScanEntryTest() throws IOException {
         Mri mri = mriScansService.submitMriScan(USER_ID,  MINE_TYPE);
 
         assertEquals(mri.getUserId(), USER_ID);

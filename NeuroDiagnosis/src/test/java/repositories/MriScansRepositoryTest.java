@@ -8,6 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.UUID;
@@ -41,7 +42,7 @@ public class MriScansRepositoryTest {
     }
 
     @Test
-    void addNewScanEntryUserIdTest() {
+    void addNewScanEntryUserIdTest() throws IOException {
         var repository = new MriScansRepository(new DatabaseContextTests());
         Mri resultMri = repository.addNewScanEntry(USER_ID,MINE_TYPE);
 

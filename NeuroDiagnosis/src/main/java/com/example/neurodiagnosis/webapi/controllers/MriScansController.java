@@ -9,6 +9,7 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.UUID;
 
@@ -30,8 +31,9 @@ public class MriScansController {
     @Path("submitMriScan")
     @Produces("application/json")
     @Consumes(MediaType.MULTIPART_FORM_DATA)
-    public MriScanDTO submitMriScan(@FormParam("id")String userId, @FormParam("image") File image) {
+    public MriScanDTO submitMriScan(@FormParam("id")String userId, @FormParam("image") File image) throws IOException {
         var result = _mriScansService.submitMriScan(UUID.fromString(userId),image);
+
         return new MriScanDTO(result.getUserId(), Arrays.toString(result.getImage()));
     }
 
