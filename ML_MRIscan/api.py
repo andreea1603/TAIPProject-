@@ -22,11 +22,12 @@ def get_sentiment_analysis():
         base64Img = body["imageAsBase64"]
 
         result = get_result(base64Img)
-
+        print(result)
         return jsonify(result)
     except Exception as e:
         print(e)
         return jsonify({'MRI scan failed': 0})
+
 
 if __name__ == '__main__':
     app.run(debug=True, threaded=True, processes=1)

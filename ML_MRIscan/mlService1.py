@@ -16,7 +16,7 @@ def get_result(base64Img):
         fh.write(base64.decodebytes(bytes(base64Img, 'utf-8')))
 
     img = tf.keras.utils.load_img(
-        'MRI_of_Human_Brain.jpg', target_size=(48, 48)
+        'imageToSave.jpg', target_size=(48, 48)
     )
 
     img_array = tf.keras.utils.img_to_array(img)
