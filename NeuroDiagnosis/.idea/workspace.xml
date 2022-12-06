@@ -9,7 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37f3fcd6-a0ff-4019-a84e-130639b53af3" name="Changes" comment="" />
+    <list default="true" id="37f3fcd6-a0ff-4019-a84e-130639b53af3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,20 +29,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="JpbToolWindowState">
-    <option name="myId2FirstActivated">
-      <map>
-        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
-        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
-        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
-      </map>
-    </option>
-    <option name="myId2Visible">
-      <map>
-        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
-        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
-        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
-      </map>
-    </option>
+    <option name="isToolWindowVisible" value="false" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -104,7 +93,7 @@
       <recent name="com.example.neurodiagnosis.verification.mop.monitor2" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Toate testele (editeaza path-ul din config)">
+  <component name="RunManager" selected="Payara Server.Payara 6.2022.1.Alpha4">
     <configuration name="GlassFish 7.0.0.M10" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 7.0.0.M10" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="corretto-11" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -373,6 +362,7 @@
       <workItem from="1669827332366" duration="19255000" />
       <workItem from="1669981255296" duration="8814000" />
       <workItem from="1669990112374" duration="310000" />
+      <workItem from="1670346147267" duration="831000" />
     </task>
     <servers />
   </component>

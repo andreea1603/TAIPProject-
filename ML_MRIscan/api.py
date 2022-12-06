@@ -1,6 +1,6 @@
 import base64
 
-from flask import Flask, jsonify, request
+from flask import *
 from flask_cors import CORS
 
 from mlService1 import get_result
@@ -14,26 +14,19 @@ cors = CORS(app, resources={
 })
 
 
-@app.route("/getAnalysis", methods=['GET'])
+@app.route("/getAnalysis", methods=['POST'])
 def get_sentiment_analysis():
     try:
-        url = request.args.get('photo')
-        print(url)
-        x = len(url)
-        print(x)
-        decodeit = open('imgToSave', 'wb')
-        decodeit.write(base64.b64decode(url))
-        decodeit.close()
-        # fileP = url[0:50]
-        # filename = fileP.replace('/', '') + '.jpg'
-        filename = r'MRI_of_Human_Brain.jpg'
-        result = get_result(filename)
+        body = request.get_json()
+
+        base64Img = body["imageAsBase64"]
+
+        result = get_result(base64Img)
 
         return jsonify(result)
     except Exception as e:
         print(e)
-    return jsonify({'MRI scan failed': 0})
-
+        return jsonify({'MRI scan failed': 0})
 
 if __name__ == '__main__':
     app.run(debug=True, threaded=True, processes=1)
