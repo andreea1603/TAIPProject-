@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @NoArgsConstructor
@@ -24,5 +25,10 @@ public class MMseService implements IMmseService, Serializable {
     @Override
     public TestResult submitTestResults(UUID userId, Date dateTimeOffset, int score) {
             return this.mmseTestResultsRepository.addNewTestResultsEntry(userId, dateTimeOffset, score);
+    }
+
+    @Override
+    public List<TestResult> getHistory(UUID userId) {
+        return mmseTestResultsRepository.getTestResults(userId);
     }
 }

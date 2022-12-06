@@ -27,19 +27,20 @@ public class User extends BaseEntity {
     private String firstName;
     private String username;
     private String lastName;
-    private Date birthDate;
     private Boolean gender;
 
     // Address info: fields used in test
     private String country;
     private String province;
     private String city;
+    private int age;
+    private String marriedStatus;
 
     public User (UUID userId) {
         super(userId);
     }
 
-    public User(UUID id, String emailAddress, String passwordHash, Boolean handedness, String phoneNumber, String firstName, String username, String lastName, Date birthDate, Boolean gender, String country, String province, String city) {
+    public User(UUID id, String emailAddress, String passwordHash, Boolean handedness, String phoneNumber, String firstName, String username, String lastName, Boolean gender, String country, String province, String city) {
         super(id);
         this.emailAddress = emailAddress;
         this.passwordHash = passwordHash;
@@ -48,7 +49,6 @@ public class User extends BaseEntity {
         this.firstName = firstName;
         this.username = username;
         this.lastName = lastName;
-        this.birthDate = birthDate;
         this.gender = gender;
         this.country = country;
         this.province = province;
@@ -65,7 +65,6 @@ public class User extends BaseEntity {
         this.firstName = firstName;
         this.username = username;
         this.lastName = lastName;
-        this.birthDate = birthDate;
         this.gender = gender;
     }
 
@@ -91,7 +90,6 @@ public class User extends BaseEntity {
                 ", firstName='" + firstName + '\'' +
                 ", username='" + username + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", birthDate=" + birthDate +
                 ", gender=" + gender +
                 ", country='" + country + '\'' +
                 ", province='" + province + '\'' +
@@ -99,16 +97,17 @@ public class User extends BaseEntity {
                 '}';
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return emailAddress.equals(user.emailAddress) && passwordHash.equals(user.passwordHash) && Objects.equals(handedness, user.handedness) && Objects.equals(phoneNumber, user.phoneNumber) && firstName.equals(user.firstName) && username.equals(user.username) && lastName.equals(user.lastName) && Objects.equals(birthDate, user.birthDate) && Objects.equals(gender, user.gender) && Objects.equals(country, user.country) && Objects.equals(province, user.province) && Objects.equals(city, user.city);
+        return emailAddress.equals(user.emailAddress) && passwordHash.equals(user.passwordHash) && Objects.equals(handedness, user.handedness) && Objects.equals(phoneNumber, user.phoneNumber) && firstName.equals(user.firstName) && username.equals(user.username) && lastName.equals(user.lastName)&& Objects.equals(gender, user.gender) && Objects.equals(country, user.country) && Objects.equals(province, user.province) && Objects.equals(city, user.city);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(emailAddress, passwordHash, handedness, phoneNumber, firstName, username, lastName, birthDate, gender, country, province, city);
+        return Objects.hash(emailAddress, passwordHash, handedness, phoneNumber, firstName, username, lastName, gender, country, province, city);
     }
 }
