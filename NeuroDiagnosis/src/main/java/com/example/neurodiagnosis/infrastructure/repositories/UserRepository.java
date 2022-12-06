@@ -70,7 +70,6 @@ public class UserRepository extends BaseRepository
         }
 
         return Optional.of(users.get(0));
-
     }
 
     @Override
@@ -85,7 +84,6 @@ public class UserRepository extends BaseRepository
 
         return Optional.of(users.get(0));
     }
-
     @Override
     public void deleteUserAccount(UUID userId) {
         em.getTransaction().begin();

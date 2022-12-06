@@ -12,5 +12,5 @@ import java.util.UUID;
 
 public interface IMriScansRepository extends IRepository {
     Mri addNewScanEntry(UUID usedId, File photo) throws IOException;
-    void getMlResults(byte[] picture) throws IOException;
+    String getMlResults(byte[] picture) throws IOException;
 }

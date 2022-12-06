@@ -15,6 +15,7 @@ import java.util.UUID;
 @NamedQueries({
         @NamedQuery(name = "User.findByEmail", query = "SELECT u FROM User u WHERE u.emailAddress = :email"),
         @NamedQuery(name = "User.findByUsername", query = "SELECT u FROM User u WHERE u.username = :username"),
+        @NamedQuery(name = "User.findById", query = "SELECT u FROM User u WHERE u.id = :id"),
         @NamedQuery(name = "User.countUsers", query = "SELECT u FROM User u"),
 })
 @Getter
@@ -35,6 +36,26 @@ public class User extends BaseEntity {
     private String city;
     private int age;
     private String marriedStatus;
+
+    public User(UUID id, String emailAddress, String passwordHash, Boolean handedness, String phoneNumber, String firstName, String username, String lastName, Boolean gender, String country, String province, String city, int age, String marriedStatus, String mriScanResult) {
+        super(id);
+        this.emailAddress = emailAddress;
+        this.passwordHash = passwordHash;
+        this.handedness = handedness;
+        this.phoneNumber = phoneNumber;
+        this.firstName = firstName;
+        this.username = username;
+        this.lastName = lastName;
+        this.gender = gender;
+        this.country = country;
+        this.province = province;
+        this.city = city;
+        this.age = age;
+        this.marriedStatus = marriedStatus;
+        MriScanResult = mriScanResult;
+    }
+
+    private String MriScanResult;
 
     public User (UUID userId) {
         super(userId);
@@ -110,4 +131,12 @@ public class User extends BaseEntity {
     public int hashCode() {
         return Objects.hash(emailAddress, passwordHash, handedness, phoneNumber, firstName, username, lastName, gender, country, province, city);
     }
+    public String getMriScanResult() {
+        return MriScanResult;
+    }
+
+    public void setMriScanResult(String mriScanResult) {
+        MriScanResult = mriScanResult;
+    }
+
 }

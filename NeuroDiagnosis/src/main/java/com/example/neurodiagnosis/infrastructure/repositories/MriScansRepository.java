@@ -3,26 +3,26 @@ package com.example.neurodiagnosis.infrastructure.repositories;
 import com.example.neurodiagnosis.application.interfaces.repositories.IMriScansRepository;
 import com.example.neurodiagnosis.application.service.database.IDatabaseContext;
 import com.example.neurodiagnosis.domain.entities.Mri;
+import com.example.neurodiagnosis.domain.entities.User;
 import com.example.neurodiagnosis.infrastructure.repositories.base.BaseRepository;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.persistence.EntityManager;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
-import javax.imageio.ImageIO;
-import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.*;
 
 import java.nio.file.Files;
 import java.util.*;
+
+import static org.postgresql.core.Oid.JSON;
 
 
 @Named("mriScansRepository")
@@ -41,7 +41,7 @@ public class MriScansRepository extends BaseRepository
         mri.setId(UUID.randomUUID());
 
         byte[] bytes = Files.readAllBytes(photo.toPath());
-        getMlResults(bytes);
+        String mriResults = getMlResults(bytes);
 
         try {
             mri.setImage(Files.readAllBytes(photo.toPath()));
@@ -57,6 +57,22 @@ public class MriScansRepository extends BaseRepository
             }
             em.persist(mri);
             em.getTransaction().commit();
+
+            UserRepository userRepository = new UserRepository(getDatabaseContext());
+
+            Optional<User> myUser = Optional.of(em.find(User.class, usedId));
+
+            try {
+
+                myUser.ifPresent(user -> user.setMriScanResult(mriResults));
+                EntityManager emUser = userRepository.getEntityManager();
+                emUser.getTransaction().begin();
+                emUser.persist(myUser.get());
+                emUser.getTransaction().commit();
+            }
+            catch (Exception e){
+                System.out.println(e);
+            }
             return mri;
 
         } catch (Exception e){
@@ -65,7 +81,7 @@ public class MriScansRepository extends BaseRepository
     }
 
     @Override
-    public void getMlResults(byte[] picture) throws IOException {
+    public String getMlResults(byte[] picture) throws IOException {
         try {
             String encoded = Base64.getEncoder().encodeToString(picture);
             System.out.println(encoded);
@@ -86,7 +102,7 @@ public class MriScansRepository extends BaseRepository
 
                 var response =httpClient.execute(httpPost);
                 var statistics = EntityUtils.toString(response.getEntity());
-
+                return statistics;
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
@@ -95,5 +111,6 @@ public class MriScansRepository extends BaseRepository
         catch (Exception e){
             System.out.println(e);
         }
+        return null;
     }
 }
