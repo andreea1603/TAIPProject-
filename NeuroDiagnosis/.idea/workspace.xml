@@ -10,7 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37f3fcd6-a0ff-4019-a84e-130639b53af3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../ML_MRIscan/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/MriScansRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/MriScansRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,9 +29,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="JpbToolWindowState">
-    <option name="isToolWindowVisible" value="false" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -55,26 +54,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/zero6/Desktop/neurodiagnosis/TAIPProject-/NeuroDiagnosis/src/main/java/com/example/neurodiagnosis/verification/mop&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.32988507&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;2c576d27c89963c618af9778b9b5fda6&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/zero6/Desktop/neurodiagnosis/TAIPProject-/NeuroDiagnosis/src/main/java/com/example/neurodiagnosis/verification/mop",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.32988507",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "spring.configuration.checksum": "2c576d27c89963c618af9778b9b5fda6"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.neurodiagnosis.infrastructure.repositories.base" />
@@ -93,8 +93,8 @@
       <recent name="com.example.neurodiagnosis.verification.mop.monitor2" />
     </key>
   </component>
-  <component name="RunManager" selected="Payara Server.Payara 6.2022.1.Alpha4">
-    <configuration name="GlassFish 7.0.0.M10" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 7.0.0.M10" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="corretto-11" nameIsGenerated="true">
+  <component name="RunManager" selected="GlassFish Server.GlassFish 7.0.0.M8">
+    <configuration name="GlassFish 7.0.0.M8" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 7.0.0.M8" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="corretto-11" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="NeuroDiagnosis:war exploded">
@@ -327,7 +327,7 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="GlassFish Server.GlassFish 7.0.0.M10" />
+      <item itemvalue="GlassFish Server.GlassFish 7.0.0.M8" />
       <item itemvalue="JUnit.Toate testele (editeaza path-ul din config)" />
       <item itemvalue="JUnit.UsersRepositoryTests.givenUsersRepository__whenFindUserByIdWithExistentUserId__shouldReturnTheUserWithThatUserId" />
       <item itemvalue="JUnit.AlzheimerMLControllerTests.givenAuthController__WhenRegisterIsRequestedWithInvalidData_ShouldRespondWithRegisterError" />
@@ -486,6 +486,71 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/application/service/user/JwtService.java</url>
           <line>33</line>
           <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/MriScansRepository.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="130" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/MriScansRepository.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="131" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/MriScansRepository.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="132" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/MriScansRepository.java</url>
+          <line>79</line>
+          <option name="timeStamp" value="135" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/MriScansRepository.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="136" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/MriScansRepository.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="137" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/MriScansRepository.java</url>
+          <line>87</line>
+          <option name="timeStamp" value="138" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/MriScansRepository.java</url>
+          <line>84</line>
+          <option name="timeStamp" value="139" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/MriScansRepository.java</url>
+          <line>85</line>
+          <option name="timeStamp" value="140" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/MriScansRepository.java</url>
+          <line>107</line>
+          <option name="timeStamp" value="142" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/MriScansRepository.java</url>
+          <line>78</line>
+          <option name="timeStamp" value="143" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/MriScansRepository.java</url>
+          <line>88</line>
+          <option name="timeStamp" value="144" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/neurodiagnosis/infrastructure/repositories/MriScansRepository.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="145" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
