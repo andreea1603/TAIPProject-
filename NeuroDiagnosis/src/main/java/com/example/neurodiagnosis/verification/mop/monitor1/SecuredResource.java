@@ -3,6 +3,7 @@ package com.example.neurodiagnosis.verification.mop.monitor1;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.Claim;
 import com.example.neurodiagnosis.application.service.user.JwtService;
+import com.example.neurodiagnosis.domain.exceptions.JwtValidationException;
 import com.example.neurodiagnosis.webapi.security.UserPrincipal;
 
 import java.util.Map;
@@ -37,13 +38,13 @@ public abstract class SecuredResource {
 
 
 
-    private Map<String, Claim> validateToken(String token) throws Exception {
+    private Map<String, Claim> validateToken(String token) throws JwtValidationException {
         Map<String, Claim> claims;
 
         try {
             claims = JwtService.decodeJWT(token);
         } catch (JWTVerificationException jwtVerificationException) {
-            throw new Exception(jwtVerificationException);
+            throw new JwtValidationException(jwtVerificationException);
         }
 
         return claims;

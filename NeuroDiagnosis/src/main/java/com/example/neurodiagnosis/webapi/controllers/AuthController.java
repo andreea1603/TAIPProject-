@@ -2,6 +2,8 @@ package com.example.neurodiagnosis.webapi.controllers;
 
 import com.example.neurodiagnosis.application.service.user.IUsersService;
 import com.example.neurodiagnosis.domain.entities.User;
+import com.example.neurodiagnosis.domain.exceptions.LoginException;
+import com.example.neurodiagnosis.domain.exceptions.RegistrationException;
 import com.example.neurodiagnosis.webapi.dtos.JwtTokenResponse;
 import com.example.neurodiagnosis.webapi.dtos.LoginRequestDTO;
 import com.example.neurodiagnosis.webapi.dtos.RegisterRequestDTO;
@@ -17,22 +19,22 @@ import java.util.Optional;
 @Path("/auth/")
 public class AuthController {
 
-    private final IUsersService _userService;
+    private final IUsersService userService;
     @Inject
     public AuthController(@Named("usersService") IUsersService userService) {
-        _userService = userService;
+        this.userService = userService;
     }
 
     @POST
     @Path("login")
     @Consumes("application/json")
     @Produces("application/json")
-    public JwtTokenResponse loginUser(final LoginRequestDTO loginRequestDTO) throws Exception {
+    public JwtTokenResponse loginUser(final LoginRequestDTO loginRequestDTO) throws LoginException {
 
-        Optional<String> jwtToken = _userService.loginUser(loginRequestDTO.userNameOrEmail, loginRequestDTO.password);
+        Optional<String> jwtToken = userService.loginUser(loginRequestDTO.userNameOrEmail, loginRequestDTO.password);
 
         if (jwtToken.isEmpty()) {
-            throw new Exception("Invalid credentials");
+            throw new LoginException("Invalid credentials");
         }
 
         return new JwtTokenResponse(jwtToken.get());
@@ -42,12 +44,12 @@ public class AuthController {
     @Path("register")
     @Consumes("application/json")
     @Produces("application/json")
-    public User registerUser(final RegisterRequestDTO registerRequestDTO) throws Exception {
+    public User registerUser(final RegisterRequestDTO registerRequestDTO) throws RegistrationException {
 
-        var userOpt = _userService.registerUser(registerRequestDTO);
+        var userOpt = userService.registerUser(registerRequestDTO);
 
         if (userOpt.isEmpty()) {
-            throw new Exception("Couldn't register user!");
+            throw new RegistrationException("Couldn't register user!");
         }
 
         return userOpt.get();

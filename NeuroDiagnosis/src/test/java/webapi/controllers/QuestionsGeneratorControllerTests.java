@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class QuestionsGeneratorControllerTests {
+class QuestionsGeneratorControllerTests {
 
     @Test
     void givenQuestionsController__WhenGenerateIsRequested__ShouldReturnOkStatus() {

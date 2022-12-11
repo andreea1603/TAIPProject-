@@ -1,6 +1,7 @@
 package com.example.neurodiagnosis.verification.mop;
 
 import com.example.neurodiagnosis.application.service.user.IUsersService;
+import com.example.neurodiagnosis.domain.exceptions.RegistrationException;
 import com.example.neurodiagnosis.webapi.dtos.ApplicationUserDTO;
 import com.example.neurodiagnosis.webapi.dtos.RegisterRequestDTO;
 import jakarta.ws.rs.Consumes;
@@ -25,8 +26,8 @@ public class Test2 {
                 registerRequestDTO.getLastName(), registerRequestDTO.getEmailAddress(), registerRequestDTO.getPassword()
         );
 
-        if ( !userOpt.isPresent() ) {
-            throw new Exception("Couldn't register user!");
+        if (userOpt.isEmpty()) {
+            throw new RegistrationException("Couldn't register user!");
         }
 
         var user = userOpt.get();

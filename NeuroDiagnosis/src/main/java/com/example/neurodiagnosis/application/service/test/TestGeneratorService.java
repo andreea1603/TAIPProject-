@@ -52,6 +52,14 @@ public class TestGeneratorService implements ITestGeneratorService, Serializable
         return new TestDTO(questionsToUser);
     }
 
+    private String getSeason(int month) {
+        if (3 <= month && month <= 5) return "Spring";
+        if (6 <= month && month <= 8) return "Summer";
+        if (9 <= month && month <= 11) return "Autumn";
+
+        return "Winter";
+    }
+
     private QuestionDetailsDTO computeQuestionForUser(Question questionFromDB, Optional<User> isUser) {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDateTime now = LocalDateTime.now();
@@ -79,10 +87,8 @@ public class TestGeneratorService implements ITestGeneratorService, Serializable
             );
         } else if (questionFromDB.getQuestion().equals("What season is this?")) {
             int month = Integer.parseInt(currentDate.split("/")[1]);
-            String anotimp = (3 <= month && month <= 5) ? "Spring" :
-                    (6 <= month && month <= 8) ? "Summer" :
-                            (9 <= month && month <= 11) ? "Autumn" :
-                                    "Winter";
+            String anotimp = getSeason(month);
+
             return new QuestionDetailsDTO(
                     questionFromDB.getQuestion(),
                     anotimp

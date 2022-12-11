@@ -16,7 +16,6 @@ import jakarta.ws.rs.core.SecurityContext;
 import java.security.Principal;
 import java.util.UUID;
 
-//http://localhost:8080/NeuroDiagnosis-1.0-SNAPSHOT/api/test/generate
 @Path("/test/")
 public class TestGeneratorController {
     @Context

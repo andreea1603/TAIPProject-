@@ -26,7 +26,7 @@ class TestsGeneratorControllerTests {
     }
 
     @Test
-    public void givenTestController__WhenGenerateIsRequested__ShouldReturnSomeTest() {
+    void givenTestController__WhenGenerateIsRequested__ShouldReturnSomeTest() {
 
         TestGeneratorController tgc = new TestGeneratorController(
                 new TestGeneratorService(new UserRepository(new DatabaseContextTests()),
