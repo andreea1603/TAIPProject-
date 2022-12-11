@@ -2,13 +2,10 @@ package webapi.controllers;
 
 import com.example.neurodiagnosis.application.service.database.DatabaseContextTests;
 import com.example.neurodiagnosis.application.service.mmse.MMseService;
-import com.example.neurodiagnosis.application.service.question.QuestionService;
 import com.example.neurodiagnosis.infrastructure.repositories.MmseTestResultsRepository;
-import com.example.neurodiagnosis.infrastructure.repositories.QuestionRepository;
 import com.example.neurodiagnosis.infrastructure.repositories.UserRepository;
 import com.example.neurodiagnosis.infrastructure.seed.UsersFactory;
 import com.example.neurodiagnosis.webapi.controllers.MmseTestsController;
-import com.example.neurodiagnosis.webapi.controllers.QuestionGeneratorController;
 import com.example.neurodiagnosis.webapi.dtos.SubmitTestResultRequestDTO;
 import com.example.neurodiagnosis.webapi.security.UserPrincipal;
 import jakarta.ws.rs.core.SecurityContext;
@@ -18,7 +15,7 @@ import org.mockito.Mockito;
 
 import java.util.Date;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class MmseTestControllerTests {
 

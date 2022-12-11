@@ -2,15 +2,12 @@ package services;
 
 import com.example.neurodiagnosis.application.service.user.IPasswordHashGeneratorService;
 import com.example.neurodiagnosis.application.service.user.PasswordHashGeneratorService;
-import com.example.neurodiagnosis.application.service.validators.EmailValidatorService;
-import com.example.neurodiagnosis.application.service.validators.IEmailValidatorService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class PasswordHashGeneratorTests {
 

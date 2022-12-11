@@ -1,7 +1,6 @@
 package com.example.neurodiagnosis.application.service.question;
 
 import com.example.neurodiagnosis.application.interfaces.repositories.IQuestionRepository;
-import com.example.neurodiagnosis.domain.entities.Mri;
 import com.example.neurodiagnosis.domain.entities.Question;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Inject;
@@ -9,8 +8,6 @@ import jakarta.inject.Named;
 
 import java.io.Serializable;
 import java.sql.Blob;
-import java.util.Date;
-import java.util.UUID;
 
 @Named("questionsService")
 @SessionScoped

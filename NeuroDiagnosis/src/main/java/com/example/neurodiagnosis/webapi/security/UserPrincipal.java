@@ -1,6 +1,5 @@
 package com.example.neurodiagnosis.webapi.security;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

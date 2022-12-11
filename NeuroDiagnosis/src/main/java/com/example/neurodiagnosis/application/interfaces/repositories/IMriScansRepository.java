@@ -5,9 +5,6 @@ import com.example.neurodiagnosis.infrastructure.repositories.base.IRepository;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
-import java.util.Date;
 import java.util.UUID;
 
 public interface IMriScansRepository extends IRepository {

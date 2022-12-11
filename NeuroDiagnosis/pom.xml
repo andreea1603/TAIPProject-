@@ -34,6 +34,8 @@
             src/main/java/com/example/neurodiagnosis/webapi/dtos/**,
             src/main/java/com/example/neurodiagnosis/aspects/**,
             src/main/java/com/example/neurodiagnosis/verification/**,
+            src/main/java/com/example/neurodiagnosis/infrastructure/repositories/MriScansRepository.java,
+            src/main/java/com/example/neurodiagnosis/application/service/database/DatabaseContextLive.java,
         </sonar.exclusions>
         <!-- JaCoCo + Sonar Properties END -->
     </properties>

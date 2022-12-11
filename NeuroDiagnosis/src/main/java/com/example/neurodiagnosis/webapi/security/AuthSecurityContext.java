@@ -7,7 +7,7 @@ import java.security.Principal;
 
 public class AuthSecurityContext implements SecurityContext {
 
-    private UserPrincipal userPrincipal;
+    private final UserPrincipal userPrincipal;
 
     public AuthSecurityContext(UserPrincipal userPrincipal) {
 

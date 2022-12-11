@@ -2,7 +2,7 @@ package com.example.neurodiagnosis.webapi.controllers;
 
 import com.example.neurodiagnosis.application.service.mri.IMriScansService;
 import com.example.neurodiagnosis.application.service.mri.MriScansService;
-import com.example.neurodiagnosis.webapi.dtos.*;
+import com.example.neurodiagnosis.webapi.dtos.MriScanDTO;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import jakarta.ws.rs.*;

@@ -15,14 +15,14 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 
-import java.io.*;
-
+import java.io.File;
+import java.io.IOException;
+import java.io.Serializable;
 import java.nio.file.Files;
-import java.util.*;
-
-import static org.postgresql.core.Oid.JSON;
+import java.util.Base64;
+import java.util.Optional;
+import java.util.UUID;
 
 
 @Named("mriScansRepository")

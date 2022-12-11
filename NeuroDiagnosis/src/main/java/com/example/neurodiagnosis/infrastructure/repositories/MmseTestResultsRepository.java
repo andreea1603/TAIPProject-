@@ -3,22 +3,22 @@ package com.example.neurodiagnosis.infrastructure.repositories;
 import com.example.neurodiagnosis.application.interfaces.repositories.IMmseTestResultsRepository;
 import com.example.neurodiagnosis.application.service.database.IDatabaseContext;
 import com.example.neurodiagnosis.domain.entities.TestResult;
-import com.example.neurodiagnosis.domain.entities.User;
 import com.example.neurodiagnosis.infrastructure.repositories.base.BaseRepository;
-import com.example.neurodiagnosis.infrastructure.repositories.base.IRepository;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
-import org.junit.jupiter.api.Test;
 
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 @Named("mmseTestResultsRepository")
 public class MmseTestResultsRepository extends BaseRepository
         implements IMmseTestResultsRepository, Serializable {
+    public MmseTestResultsRepository() {
+        super();
+    }
+
     @Inject
     public MmseTestResultsRepository(@Named("DatabaseContextLive") IDatabaseContext databaseContext) {
         super(databaseContext);
@@ -33,7 +33,7 @@ public class MmseTestResultsRepository extends BaseRepository
             testResult.setTestDate(dateTimeOffset);
             testResult.setId(UUID.randomUUID());
 
-            if(!em.getTransaction().isActive()){
+            if (!em.getTransaction().isActive()) {
                 em.getTransaction().begin();
             }
 
@@ -41,8 +41,7 @@ public class MmseTestResultsRepository extends BaseRepository
             em.getTransaction().commit();
 
             return testResult;
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             return null;
         }
     }

@@ -3,7 +3,6 @@ package com.example.neurodiagnosis.aspects;
 
 import com.example.neurodiagnosis.aspects.beans.UserRegisterCounterBean;
 import com.example.neurodiagnosis.webapi.dtos.ApplicationUserDTO;
-import com.example.neurodiagnosis.webapi.dtos.JwtTokenResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;

@@ -1,8 +1,6 @@
 package com.example.neurodiagnosis.infrastructure.seed;
 
-import com.example.neurodiagnosis.application.service.database.DatabaseContextTests;
 import com.example.neurodiagnosis.application.service.question.IQuestionService;
-import com.example.neurodiagnosis.infrastructure.repositories.QuestionRepository;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 
@@ -10,7 +8,7 @@ import java.io.Serializable;
 
 @Named("questionsFactory")
 public class QuestionsFactory implements Serializable {
-    private IQuestionService questionService;
+    private final IQuestionService questionService;
 
     @Inject
     public QuestionsFactory(@Named("questionsService") IQuestionService questionService) {

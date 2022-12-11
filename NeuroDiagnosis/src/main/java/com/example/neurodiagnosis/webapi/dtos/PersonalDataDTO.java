@@ -1,7 +1,5 @@
 package com.example.neurodiagnosis.webapi.dtos;
 
-import java.util.Date;
-
 public class PersonalDataDTO {
     public int age;
     public Boolean gender;

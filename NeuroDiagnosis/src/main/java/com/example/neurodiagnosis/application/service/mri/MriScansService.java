@@ -1,7 +1,7 @@
 package com.example.neurodiagnosis.application.service.mri;
 
-import com.example.neurodiagnosis.domain.entities.Mri;
 import com.example.neurodiagnosis.application.interfaces.repositories.IMriScansRepository;
+import com.example.neurodiagnosis.domain.entities.Mri;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;

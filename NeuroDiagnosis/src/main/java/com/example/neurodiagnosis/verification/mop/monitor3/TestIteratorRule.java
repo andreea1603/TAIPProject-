@@ -3,11 +3,9 @@ package com.example.neurodiagnosis.verification.mop.monitor3;
 import com.example.neurodiagnosis.application.service.database.DatabaseContextLive;
 import com.example.neurodiagnosis.domain.entities.TestResult;
 import com.example.neurodiagnosis.infrastructure.repositories.MmseTestResultsRepository;
-import com.example.neurodiagnosis.verification.mop.monitor1.TestResultsResource;
 
 import java.util.Iterator;
 import java.util.UUID;
-import java.util.Vector;
 
 public class TestIteratorRule {
 

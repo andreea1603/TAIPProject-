@@ -1,13 +1,11 @@
 package services;
 
-import com.example.neurodiagnosis.application.service.user.IPasswordHashGeneratorService;
 import com.example.neurodiagnosis.application.service.user.JwtService;
-import com.example.neurodiagnosis.application.service.user.PasswordHashGeneratorService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 class JwtServiceTests {
 

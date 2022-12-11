@@ -2,21 +2,22 @@ package com.example.neurodiagnosis.webapi.controllers;
 
 import com.example.neurodiagnosis.application.service.user.IUsersService;
 import com.example.neurodiagnosis.domain.entities.User;
-import com.example.neurodiagnosis.webapi.annotations.EnforcesUserAuthorization;
-import com.example.neurodiagnosis.webapi.dtos.ApplicationUserDTO;
 import com.example.neurodiagnosis.webapi.dtos.JwtTokenResponse;
 import com.example.neurodiagnosis.webapi.dtos.LoginRequestDTO;
 import com.example.neurodiagnosis.webapi.dtos.RegisterRequestDTO;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
-import jakarta.ws.rs.*;
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
 
 import java.util.Optional;
 
 @Path("/auth/")
 public class AuthController {
 
-    private IUsersService _userService;
+    private final IUsersService _userService;
     @Inject
     public AuthController(@Named("usersService") IUsersService userService) {
         _userService = userService;

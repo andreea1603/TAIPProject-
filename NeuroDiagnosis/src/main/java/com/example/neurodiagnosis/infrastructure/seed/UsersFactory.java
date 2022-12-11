@@ -12,7 +12,7 @@ import java.io.Serializable;
 public class UsersFactory implements Serializable {
 
 
-    private IUserRepository userRepository;
+    private final IUserRepository userRepository;
 
     @Inject
     public UsersFactory(IUserRepository userRepository) {

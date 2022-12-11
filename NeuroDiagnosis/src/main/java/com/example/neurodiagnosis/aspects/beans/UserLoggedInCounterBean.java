@@ -5,7 +5,6 @@ import jakarta.ejb.Singleton;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Named;
 
-
 import java.io.Serializable;
 
 @Singleton

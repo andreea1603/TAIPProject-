@@ -1,9 +1,9 @@
 package com.example.neurodiagnosis.application.service.user;
 
+import com.example.neurodiagnosis.application.interfaces.email.IEmailService;
+import com.example.neurodiagnosis.application.interfaces.repositories.IUserRepository;
 import com.example.neurodiagnosis.application.service.validators.IEmailValidatorService;
 import com.example.neurodiagnosis.domain.entities.User;
-import com.example.neurodiagnosis.application.interfaces.repositories.IUserRepository;
-import com.example.neurodiagnosis.application.interfaces.email.IEmailService;
 import com.example.neurodiagnosis.webapi.dtos.RegisterRequestDTO;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Inject;
@@ -39,7 +39,7 @@ public class UsersService implements  IUsersService, Serializable {
     @Override
     public Optional<String> loginUser(String userNameOrEmail, String password) {
 
-        Optional<User> user = null;
+        Optional<User> user = Optional.empty();
 
         if (this.emailValidatorService.validateEmail(userNameOrEmail)) {
             //Logs in by email

@@ -5,8 +5,6 @@ import com.example.neurodiagnosis.domain.entities.TestResult;
 import com.example.neurodiagnosis.webapi.annotations.EnforcesUserAuthorization;
 import com.example.neurodiagnosis.webapi.dtos.SubmitTestResultRequestDTO;
 import com.example.neurodiagnosis.webapi.dtos.TestResultDTO;
-import com.example.neurodiagnosis.webapi.security.AuthSecurityContext;
-import com.example.neurodiagnosis.webapi.security.UserPrincipal;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import jakarta.ws.rs.*;
@@ -24,7 +22,7 @@ public class MmseTestsController {
     @Context
     public SecurityContext securityContext;
 
-    private IMmseService _mmseService;
+    private final IMmseService _mmseService;
     @Inject
     public MmseTestsController(@Named("MMseService") IMmseService mmseService) {
         this._mmseService = mmseService;

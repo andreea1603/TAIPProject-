@@ -19,7 +19,9 @@ import java.util.UUID;
 @SessionScoped
 public class UserRepository extends BaseRepository
         implements IUserRepository, Serializable {
-
+    public UserRepository() {
+        super();
+    }
     @Inject
     public UserRepository(@Named("DatabaseContextLive") IDatabaseContext databaseContext) {
         super(databaseContext);

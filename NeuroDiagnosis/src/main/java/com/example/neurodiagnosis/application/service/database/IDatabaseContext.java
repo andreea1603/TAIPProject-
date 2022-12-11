@@ -5,5 +5,5 @@ import jakarta.persistence.EntityManager;
 import java.io.Serializable;
 
 public interface IDatabaseContext extends Serializable {
-    public EntityManager getEntity();
+    EntityManager getEntity();
 }
