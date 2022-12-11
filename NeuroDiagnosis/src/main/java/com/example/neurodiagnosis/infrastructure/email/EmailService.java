@@ -12,5 +12,6 @@ import java.util.Map;
 public class EmailService implements IEmailService, Serializable {
     @Override
     public void sendTemplatedEmail(String templatePath, Map<String, String> substitutions, String destinationEmail, String sourceEmail) {
+        // Not needed
     }
 }

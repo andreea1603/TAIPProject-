@@ -34,7 +34,6 @@ public class QuestionRepository extends BaseRepository
         em.persist(question1);
 
         em.getTransaction().commit();
-        System.out.println(question1);
         return question1;
     }
 

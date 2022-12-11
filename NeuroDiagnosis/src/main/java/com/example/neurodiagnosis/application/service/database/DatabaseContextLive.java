@@ -18,9 +18,4 @@ public class DatabaseContextLive implements IDatabaseContext {
         }
         return em;
     }
-
-    public void closeEntity(EntityManager entityManager) {
-        em.close();
-        entityManagerFactory.close();
-    }
 }

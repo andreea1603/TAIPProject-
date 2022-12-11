@@ -15,6 +15,7 @@ public class JwtService {
     private static final String AUDIENCE = "reactFeUrl";
     private static final Algorithm algorithm = Algorithm.HMAC256(SIGNING_KEY);
 
+    private JwtService() {}
 
     public static String createJWT(User user) {
 

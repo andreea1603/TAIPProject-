@@ -1,9 +1,11 @@
 package com.example.neurodiagnosis.application.service.database;
 
+import jakarta.inject.Named;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
+@Named("DatabaseContextTests")
 public class DatabaseContextTests implements IDatabaseContext{
 
     private EntityManagerFactory entityManagerFactory;
@@ -15,10 +17,5 @@ public class DatabaseContextTests implements IDatabaseContext{
             em = entityManagerFactory.createEntityManager();
         }
         return em;
-    }
-
-    public void closeEntity(EntityManager entityManager) {
-        em.close();
-        entityManagerFactory.close();
     }
 }

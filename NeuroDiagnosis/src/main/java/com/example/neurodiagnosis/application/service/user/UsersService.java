@@ -18,12 +18,12 @@ import java.util.UUID;
 @Named("usersService")
 @SessionScoped
 public class UsersService implements  IUsersService, Serializable {
+    private static final String HASH_ALGORITHM = "SHA-256";
     private IUserRepository userRepository;
     private IEmailService emailService;
     private IEmailValidatorService emailValidatorService;
     private IPasswordHashGeneratorService passwordHashGeneratorService;
 
-    //TODO: Adaugat nume la repository-uri (si email service) si injectat!!
     @Inject
     public UsersService(@Named("userRepository") IUserRepository userRepository,
                         @Named("emailService") IEmailService emailService,
@@ -39,7 +39,7 @@ public class UsersService implements  IUsersService, Serializable {
     @Override
     public Optional<String> loginUser(String userNameOrEmail, String password) {
 
-        Optional<User> user = Optional.empty();
+        Optional<User> user;
 
         if (this.emailValidatorService.validateEmail(userNameOrEmail)) {
             //Logs in by email
@@ -51,13 +51,13 @@ public class UsersService implements  IUsersService, Serializable {
             user = userRepository.findByUsername(userNameOrEmail);
         }
 
-        if (!user.isPresent()) {
+        if (user.isEmpty()) {
             return Optional.empty();
         }
 
         var userToLogin = user.get();
 
-        var passwordHash = passwordHashGeneratorService.calculateHash(password, "SHA-256");
+        var passwordHash = passwordHashGeneratorService.calculateHash(password, HASH_ALGORITHM);
 
         if (!userToLogin.getPasswordHash().equals(passwordHash)) {
             return Optional.empty();
@@ -83,7 +83,7 @@ public class UsersService implements  IUsersService, Serializable {
             return Optional.empty();
         }
 
-        var passwordHash = passwordHashGeneratorService.calculateHash(password, "SHA-256");
+        var passwordHash = passwordHashGeneratorService.calculateHash(password, HASH_ALGORITHM);
 
         var newUser = userRepository.createUser(username, lastName, firstName, email, passwordHash);
 
@@ -109,7 +109,7 @@ public class UsersService implements  IUsersService, Serializable {
             return Optional.empty();
         }
 
-        var passwordHash = passwordHashGeneratorService.calculateHash(registerRequestDTO.getPassword(), "SHA-256");
+        var passwordHash = passwordHashGeneratorService.calculateHash(registerRequestDTO.getPassword(), HASH_ALGORITHM);
 
         var newUser = userRepository.createUser(registerRequestDTO, passwordHash);
 
@@ -118,5 +118,6 @@ public class UsersService implements  IUsersService, Serializable {
 
     @Override
     public void deleteAccount(UUID userId) {
+        // Not needed
     }
 }

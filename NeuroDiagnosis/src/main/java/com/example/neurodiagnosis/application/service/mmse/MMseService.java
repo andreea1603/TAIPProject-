@@ -19,8 +19,8 @@ public class MMseService implements IMmseService, Serializable {
     private IMmseTestResultsRepository mmseTestResultsRepository;
 
     @Inject
-    public MMseService(@Named("mmseTestResultsRepository") IMmseTestResultsRepository MmseTestResultsRepository) {
-        this.mmseTestResultsRepository = MmseTestResultsRepository;
+    public MMseService(@Named("mmseTestResultsRepository") IMmseTestResultsRepository mmseTestResultsRepository) {
+        this.mmseTestResultsRepository = mmseTestResultsRepository;
     }
     @Override
     public TestResult submitTestResults(UUID userId, Date dateTimeOffset, int score) {

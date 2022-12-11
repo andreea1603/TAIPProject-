@@ -6,7 +6,6 @@ public class AlzheimerPredictorFromMriResultsService implements IAlzheimerPredic
 
     @Override
     public JSONObject makePrediction(byte[] image) {
-        //
-      return null;
+        return new JSONObject();
     }
 }

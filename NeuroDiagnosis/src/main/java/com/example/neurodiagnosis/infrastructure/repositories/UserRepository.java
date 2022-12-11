@@ -76,7 +76,6 @@ public class UserRepository extends BaseRepository
 
     @Override
     public User updateUserPassword(UUID userId, String passwordHash) {
-//        EntityManager entityManager = Database.getEntity();
         return null;
     }
 
@@ -95,7 +94,7 @@ public class UserRepository extends BaseRepository
                 .setParameter("email", email)
                 .getResultList();
 
-        if (users.size() == 0) {
+        if (users.isEmpty()) {
             return Optional.empty();
         }
 
@@ -108,7 +107,7 @@ public class UserRepository extends BaseRepository
                 .setParameter("username", userName)
                 .getResultList();
 
-        if (users.size() == 0) {
+        if (users.isEmpty()) {
             return Optional.empty();
         }
 
@@ -126,9 +125,6 @@ public class UserRepository extends BaseRepository
 
     @Override
     public int getUsersCount() {
-        //TODO: Optimizat sa nu incarce totul din DB
-        var result = em.createNamedQuery("User.countUsers", User.class);
-
         var users = em.createNamedQuery("User.countUsers").getResultList();
 
         return users.size();

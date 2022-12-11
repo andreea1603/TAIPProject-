@@ -79,12 +79,13 @@ public class TestGeneratorService implements ITestGeneratorService, Serializable
             );
         } else if (questionFromDB.getQuestion().equals("What season is this?")) {
             int month = Integer.parseInt(currentDate.split("/")[1]);
+            String anotimp = (3 <= month && month <= 5) ? "Spring" :
+                    (6 <= month && month <= 8) ? "Summer" :
+                            (9 <= month && month <= 11) ? "Autumn" :
+                                    "Winter";
             return new QuestionDetailsDTO(
                     questionFromDB.getQuestion(),
-                    (3 <= month && month <= 5) ? "Spring" :
-                            (6 <= month && month <= 8) ? "Summer" :
-                                    (9 <= month && month <= 11) ? "Autumn" :
-                                            "Winter"
+                    anotimp
             );
         } else if (questionFromDB.getQuestion().equals("What month is this (as a number)?")) {
             return new QuestionDetailsDTO(
