@@ -11,8 +11,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class UsersRepositoryTests {
-    private final IUserRepository userRepo;
+class UsersRepositoryTests {
+    final IUserRepository userRepo;
 
     public UsersRepositoryTests() {
         this.userRepo = new UserRepository(new DatabaseContextTests());
@@ -32,7 +32,7 @@ public class UsersRepositoryTests {
 
 
     @Test
-    public void givenUsersRepository__whenFindUserByIdWithExistentUserId__shouldReturnTheUserWithThatUserId() {
+    void givenUsersRepository__whenFindUserByIdWithExistentUserId__shouldReturnTheUserWithThatUserId() {
         //ARRANGE
 
         var userToSearch = userRepo.findByEmail("emailexistent1@gmail.com").orElseThrow();
@@ -46,7 +46,7 @@ public class UsersRepositoryTests {
 
 
     @Test
-    public void givenUsersRepository__whenDeleteUserWithExistentUserId__shouldDeleteUserFromDb() {
+    void givenUsersRepository__whenDeleteUserWithExistentUserId__shouldDeleteUserFromDb() {
         //ARRANGE
         var userToSearch = userRepo.findByEmail("emailexistent1@gmail.com").orElseThrow();
 

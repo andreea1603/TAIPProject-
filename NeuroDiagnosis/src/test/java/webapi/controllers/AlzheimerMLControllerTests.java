@@ -7,9 +7,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class AlzheimerMLControllerTests {
+class AlzheimerMLControllerTests {
     @Test
-    public void givenAuthController__WhenRegisterIsRequestedWithInvalidData_ShouldRespondWithRegisterError() {
+    void givenAuthController__WhenRegisterIsRequestedWithInvalidData_ShouldRespondWithRegisterError() {
         //Arrange
         AlzheimerMLController amc = new AlzheimerMLController(new AlzheimerPredictorFromMriScanService());
 

@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class MriScansControllerTests {
     @Test
-    public void givenMriScansController__whenSubmitScanIsRequestedWithValidData__ShouldReturnOkStatus() throws URISyntaxException, IOException {
+    void givenMriScansController__whenSubmitScanIsRequestedWithValidData__ShouldReturnOkStatus() throws URISyntaxException, IOException {
         //ARRANGE
 
         var mriScansService = Mockito.mock(IMriScansService.class);

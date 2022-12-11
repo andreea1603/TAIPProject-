@@ -33,7 +33,7 @@ class PasswordHashGeneratorTests {
         var hash = passwordHashGeneratorService.calculateHash("azur", "SHA-256");
 
         //ASSERT
-        assertEquals(hash, "fdf024dbb567981d6c6defe35175450940c6e04cbb29addf30c65a27b7795bbb");
+        assertEquals("fdf024dbb567981d6c6defe35175450940c6e04cbb29addf30c65a27b7795bbb", hash);
     }
 
 

@@ -12,7 +12,6 @@ import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.SecurityContext;
 
 import java.security.Principal;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -22,11 +21,10 @@ public class MmseTestsController {
     @Context
     public SecurityContext securityContext;
 
-    private final IMmseService _mmseService;
+    private final IMmseService mmseService;
     @Inject
     public MmseTestsController(@Named("MMseService") IMmseService mmseService) {
-        this._mmseService = mmseService;
-        //TODO: Resolve din containerul de IoC
+        this.mmseService = mmseService;
     }
 
     public Principal tryGetUserPrincipal() {
@@ -43,10 +41,9 @@ public class MmseTestsController {
         Principal userRequesting = tryGetUserPrincipal();
         var userId = UUID.fromString(userRequesting.getName());
 
-        SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date(System.currentTimeMillis());
 
-        var result = _mmseService.submitTestResults(userId, date,
+        var result = mmseService.submitTestResults(userId, date,
                 submitTestResultRequestDTO.getTestResult());
 
         return new TestResultDTO(result.getTestResult(), result.getTestDate(), result.getUserId());
@@ -57,11 +54,11 @@ public class MmseTestsController {
     @Consumes("application/json")
     @Produces("application/json")
     @EnforcesUserAuthorization
-    public List<TestResult> getHistory() throws Exception {
+    public List<TestResult> getHistory() {
         Principal userRequesting = securityContext.getUserPrincipal();
         UUID userId = UUID.fromString(userRequesting.getName());
 
-        return _mmseService.getHistory(userId);
+        return mmseService.getHistory(userId);
     }
 
 }

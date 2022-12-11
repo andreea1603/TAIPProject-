@@ -16,15 +16,14 @@ import java.util.UUID;
 @Path("/mris/")
 public class MriScansController {
 
-    private final IMriScansService _mriScansService;
+    private final IMriScansService mriScansService;
 
     @Inject
     public MriScansController(@Named("MriScansService")MriScansService mriScansService) {
-        //TODO: Resolve din containerul de IoC
-        _mriScansService = mriScansService;
+        this.mriScansService = mriScansService;
     }
     public MriScansController(IMriScansService mriScansService) {
-        _mriScansService = mriScansService;
+        this.mriScansService = mriScansService;
     }
 
     @POST
@@ -32,7 +31,7 @@ public class MriScansController {
     @Produces("application/json")
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     public MriScanDTO submitMriScan(@FormParam("id")String userId, @FormParam("image") File image) throws IOException {
-        var result = _mriScansService.submitMriScan(UUID.fromString(userId),image);
+        var result = mriScansService.submitMriScan(UUID.fromString(userId),image);
 
         return new MriScanDTO(result.getUserId(), Arrays.toString(result.getImage()));
     }

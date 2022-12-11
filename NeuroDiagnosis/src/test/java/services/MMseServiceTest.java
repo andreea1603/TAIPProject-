@@ -18,7 +18,7 @@ import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class MMseServiceTest {
+class MMseServiceTest {
     public MMseServiceTest() {
         MockitoAnnotations.initMocks(this);
     }

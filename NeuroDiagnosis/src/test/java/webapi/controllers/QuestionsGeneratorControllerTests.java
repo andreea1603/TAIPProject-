@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class QuestionsGeneratorControllerTests {
 
     @Test
-    public void givenQuestionsController__WhenGenerateIsRequested__ShouldReturnOkStatus() {
+    void givenQuestionsController__WhenGenerateIsRequested__ShouldReturnOkStatus() {
 
 
         QuestionGeneratorController qgc = new QuestionGeneratorController(new QuestionsFactory
@@ -20,6 +20,6 @@ public class QuestionsGeneratorControllerTests {
 
         var response = qgc.generateQuestions();
 
-        assertEquals(response, "OK");
+        assertEquals("OK", response);
     }
 }

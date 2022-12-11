@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class TestGeneratorServiceTests {
+class TestGeneratorServiceTests {
 
 
     public TestGeneratorServiceTests() {
@@ -22,7 +22,7 @@ public class TestGeneratorServiceTests {
 
 
     @BeforeEach
-    public void seedAllQuestions() {
+    void seedAllQuestions() {
         var questionsFactory = new QuestionsFactory(new QuestionService(new QuestionRepository(new DatabaseContextTests())));
 
         questionsFactory.seedQuestions();
@@ -34,7 +34,7 @@ public class TestGeneratorServiceTests {
     }
 
     @Test
-    public void givenTestGeneratorService__whenGenerateTestCalled__thenShouldReturnAValidTest() {
+    void givenTestGeneratorService__whenGenerateTestCalled__thenShouldReturnAValidTest() {
         var testsService = new TestGeneratorService(new UserRepository(new DatabaseContextTests()),
                 new QuestionRepository(new DatabaseContextTests()));
         var userFromSeed = new UserRepository(new DatabaseContextTests()).findByUsername("User").get();

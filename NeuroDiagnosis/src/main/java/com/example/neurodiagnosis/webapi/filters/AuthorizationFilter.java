@@ -3,6 +3,7 @@ package com.example.neurodiagnosis.webapi.filters;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.Claim;
 import com.example.neurodiagnosis.application.service.user.JwtService;
+import com.example.neurodiagnosis.domain.exceptions.JwtValidationException;
 import com.example.neurodiagnosis.webapi.annotations.EnforcesUserAuthorization;
 import com.example.neurodiagnosis.webapi.security.AuthSecurityContext;
 import com.example.neurodiagnosis.webapi.security.UserPrincipal;
@@ -28,7 +29,7 @@ public class AuthorizationFilter implements ContainerRequestFilter {
     public static final String AUTHENTICATION_SCHEME = "Bearer";
 
     @Override
-    public void filter(ContainerRequestContext requestContext) throws IOException {
+    public void filter(ContainerRequestContext requestContext) {
 
         String authorizationHeader =
                 requestContext.getHeaderString(HttpHeaders.AUTHORIZATION);
@@ -91,13 +92,13 @@ public class AuthorizationFilter implements ContainerRequestFilter {
                 .build());
     }
 
-    private Map<String, Claim> validateToken(String token) throws Exception {
+    private Map<String, Claim> validateToken(String token) throws JwtValidationException {
         Map<String, Claim> claims;
 
         try {
             claims = JwtService.decodeJWT(token);
         } catch (JWTVerificationException jwtVerificationException) {
-            throw new Exception(jwtVerificationException);
+            throw new JwtValidationException(jwtVerificationException);
         }
 
         return claims;

@@ -11,7 +11,7 @@ import java.util.UUID;
 @NoArgsConstructor
 public class UserPrincipal implements Principal {
 
-    public UUID userId;
+    private UUID userId;
 
     private String userName;
 

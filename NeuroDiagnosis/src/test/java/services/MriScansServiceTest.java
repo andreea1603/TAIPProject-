@@ -17,7 +17,7 @@ import java.util.UUID;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-public class MriScansServiceTest {
+class MriScansServiceTest {
     private final UUID USER_ID = new UUID(64, 64);
     private final Date DATE = new Date(2022, Calendar.MARCH, 2);
     private final String URL = "www.my.url";

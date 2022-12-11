@@ -17,7 +17,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class AuthControllerTests {
+class AuthControllerTests {
 
 
     @BeforeEach
@@ -33,7 +33,7 @@ public class AuthControllerTests {
     }
 
     @Test
-    public void givenAuthController__WhenRegisterIsRequestedWithInvalidData_ShouldRespondWithRegisterError() {
+    void givenAuthController__WhenRegisterIsRequestedWithInvalidData_ShouldRespondWithRegisterError() {
         //Arrange
         AuthController ac = new AuthController(new UsersService(new UserRepository(new DatabaseContextTests()),
                 new EmailService(),
@@ -47,7 +47,7 @@ public class AuthControllerTests {
 
 
     @Test
-    public void givenAuthController__WhenRegisterIsRequestedWithProperData_ShouldRespondWithRegistrationOkStatus() throws Exception {
+    void givenAuthController__WhenRegisterIsRequestedWithProperData_ShouldRespondWithRegistrationOkStatus() throws Exception {
         //Arrange
         AuthController ac = new AuthController(new UsersService(new UserRepository(new DatabaseContextTests()),
                 new EmailService(),
@@ -71,7 +71,7 @@ public class AuthControllerTests {
     }
 
     @Test
-    public void givenAuthController__WhenLoginIsRequestedWithInvalidData_ShouldRespondWithLoginError() {
+    void givenAuthController__WhenLoginIsRequestedWithInvalidData_ShouldRespondWithLoginError() {
 
         //Arrange
         AuthController ac = new AuthController(new UsersService(new UserRepository(new DatabaseContextTests()),
@@ -87,7 +87,7 @@ public class AuthControllerTests {
 
 
     @Test
-    public void givenAuthController__WhenLoginIsRequestedWithProperData_ShouldRespondWithJwtAndOkStatus() throws Exception {
+    void givenAuthController__WhenLoginIsRequestedWithProperData_ShouldRespondWithJwtAndOkStatus() throws Exception {
         //Arrange
         AuthController ac = new AuthController(new UsersService(new UserRepository(new DatabaseContextTests()),
                 new EmailService(),

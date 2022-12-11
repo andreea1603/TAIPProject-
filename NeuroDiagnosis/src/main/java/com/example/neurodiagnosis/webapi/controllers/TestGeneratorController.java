@@ -24,8 +24,8 @@ public class TestGeneratorController {
     private final ITestGeneratorService testGeneratorService;
 
     @Inject
-    public TestGeneratorController(@Named("TestGeneratorService") ITestGeneratorService _testGeneratorService) {
-        testGeneratorService = _testGeneratorService;
+    public TestGeneratorController(@Named("TestGeneratorService") ITestGeneratorService testGeneratorService) {
+        this.testGeneratorService = testGeneratorService;
     }
 
     @GET

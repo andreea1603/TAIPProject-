@@ -14,7 +14,7 @@ import org.mockito.Mockito;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class TestsGeneratorControllerTests {
+class TestsGeneratorControllerTests {
     public TestsGeneratorControllerTests() {
 
     }

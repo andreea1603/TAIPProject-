@@ -16,12 +16,11 @@ import org.mockito.Mockito;
 import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
+class AuthorizationFilterTest {
 
-public class AuthorizationFilterTest {
-
-    public static final String JWT_TOKEN_VALID_WITH_BEARER_PREFIX = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJyZWFjdEZlVXJsIiwiaXNzIjoiamF2YUFwcHBVcmwiLCJ1c2VyRW1haWwiOiJ6ZXJvNjMwNTVAZ21haWwuY29tIiwidXNlck5hbWUiOiJuaWN1MTk5OTkiLCJ1c2VySWQiOiI0MTc5NDQzMy04ZWY5LTQ2ODgtYTYwNi00MTMwMWU5MzU0NmMiLCJqdGkiOiJiNTcxMTJkOS0yNGE2LTQzNDEtYmFmZS1kZjVmNmI3MzdkOTIifQ.2Yhp8KgxTq4yIifG0vLKcVn7LhFjGDt2WhgqSlHmGBs";
-    public static final String JWT_TOKEN_VALID_WITHOUT_PREFIX = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJyZWFjdEZlVXJsIiwiaXNzIjoiamF2YUFwcHBVcmwiLCJ1c2VyRW1haWwiOiJ6ZXJvNjMwNTVAZ21haWwuY29tIiwidXNlck5hbWUiOiJuaWN1MTk5OTkiLCJ1c2VySWQiOiI0MTc5NDQzMy04ZWY5LTQ2ODgtYTYwNi00MTMwMWU5MzU0NmMiLCJqdGkiOiJiNTcxMTJkOS0yNGE2LTQzNDEtYmFmZS1kZjVmNmI3MzdkOTIifQ.2Yhp8KgxTq4yIifG0vLKcVn7LhFjGDt2WhgqSlHmGBs";
-    public static final String JWT_TOKEN_INVALID_WITHOUT_PREFIX = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJyZWFjdEZlVXJsIiwiaXNzIjoiamF2YUFwcHBVcmwiLCJ1c2VyRW1haWwiOiJ6ZXJvNjMwNTVAZ21haWwuY29tIiwidXNlck5hbWUiOiJuaWN1MTk5OTkiLCJ1c2VySWQiOiI0MTc5NDQzMy04ZWY5LTQ2ODgtYTYwNi00MTMwMWU5MzU0NmMiLCJqdGkiOiJiNTcxMTJkOS0yNGE2LTQzNDEtYmFmZS1kZjVmNmI3MzdkOTIifQ.2Yhp8KgxTq4yIifG0vLKcVn7LhFjGDt2CCCCSlHmGBs";
+    static final String JWT_TOKEN_VALID_WITH_BEARER_PREFIX = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJyZWFjdEZlVXJsIiwiaXNzIjoiamF2YUFwcHBVcmwiLCJ1c2VyRW1haWwiOiJ6ZXJvNjMwNTVAZ21haWwuY29tIiwidXNlck5hbWUiOiJuaWN1MTk5OTkiLCJ1c2VySWQiOiI0MTc5NDQzMy04ZWY5LTQ2ODgtYTYwNi00MTMwMWU5MzU0NmMiLCJqdGkiOiJiNTcxMTJkOS0yNGE2LTQzNDEtYmFmZS1kZjVmNmI3MzdkOTIifQ.2Yhp8KgxTq4yIifG0vLKcVn7LhFjGDt2WhgqSlHmGBs";
+    static final String JWT_TOKEN_VALID_WITHOUT_PREFIX = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJyZWFjdEZlVXJsIiwiaXNzIjoiamF2YUFwcHBVcmwiLCJ1c2VyRW1haWwiOiJ6ZXJvNjMwNTVAZ21haWwuY29tIiwidXNlck5hbWUiOiJuaWN1MTk5OTkiLCJ1c2VySWQiOiI0MTc5NDQzMy04ZWY5LTQ2ODgtYTYwNi00MTMwMWU5MzU0NmMiLCJqdGkiOiJiNTcxMTJkOS0yNGE2LTQzNDEtYmFmZS1kZjVmNmI3MzdkOTIifQ.2Yhp8KgxTq4yIifG0vLKcVn7LhFjGDt2WhgqSlHmGBs";
+    static final String JWT_TOKEN_INVALID_WITHOUT_PREFIX = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJyZWFjdEZlVXJsIiwiaXNzIjoiamF2YUFwcHBVcmwiLCJ1c2VyRW1haWwiOiJ6ZXJvNjMwNTVAZ21haWwuY29tIiwidXNlck5hbWUiOiJuaWN1MTk5OTkiLCJ1c2VySWQiOiI0MTc5NDQzMy04ZWY5LTQ2ODgtYTYwNi00MTMwMWU5MzU0NmMiLCJqdGkiOiJiNTcxMTJkOS0yNGE2LTQzNDEtYmFmZS1kZjVmNmI3MzdkOTIifQ.2Yhp8KgxTq4yIifG0vLKcVn7LhFjGDt2CCCCSlHmGBs";
 
     public AuthorizationFilterTest() {
 
@@ -38,7 +37,7 @@ public class AuthorizationFilterTest {
     }
 
     @Test
-    public void givenAuthorizationFilter__whenRequestWithInvalidJwtInAuthorizationHeaderIsMade__ShouldDenyAccess() throws IOException {
+    void givenAuthorizationFilter__whenRequestWithInvalidJwtInAuthorizationHeaderIsMade__ShouldDenyAccess() throws IOException {
         //Arrange
         ContainerRequestContext crc = Mockito
                 .mock(ContainerRequestContext.class);
@@ -55,7 +54,7 @@ public class AuthorizationFilterTest {
 
 
     @Test
-    public void givenAuthorizationFilter__whenRequestWithValidJwtInAuthorizationHeaderIsMade__ShouldAuthorizeAccess() throws IOException {
+    void givenAuthorizationFilter__whenRequestWithValidJwtInAuthorizationHeaderIsMade__ShouldAuthorizeAccess() throws IOException {
         //Arrange
         ContainerRequestContext crc = Mockito
                 .mock(ContainerRequestContext.class);
@@ -77,7 +76,7 @@ public class AuthorizationFilterTest {
 
 
     @Test
-    public void givenAuthorizationFilter__whenFilterMethodIsCalledWithValidJwtHeader__ShouldProceedToNextFilter() throws IOException {
+    void givenAuthorizationFilter__whenFilterMethodIsCalledWithValidJwtHeader__ShouldProceedToNextFilter() throws IOException {
         //Arrange
         ContainerRequestContext crc = Mockito
                 .mock(ContainerRequestContext.class);
@@ -100,7 +99,7 @@ public class AuthorizationFilterTest {
 
 
     @Test
-    public void givenAuthorizationFilter__whenIsTokenBasedAuthIsCalledWithABearerToken__thenShouldReturnTrue() {
+    void givenAuthorizationFilter__whenIsTokenBasedAuthIsCalledWithABearerToken__thenShouldReturnTrue() {
 
         //ARRANGE
 
@@ -113,7 +112,7 @@ public class AuthorizationFilterTest {
 
 
     @Test
-    public void givenAuthorizationFilter__whenIsTokenBasedAuthIsCalledWithNull__thenShouldReturnFalse() {
+    void givenAuthorizationFilter__whenIsTokenBasedAuthIsCalledWithNull__thenShouldReturnFalse() {
 
         //ARRANGE
 

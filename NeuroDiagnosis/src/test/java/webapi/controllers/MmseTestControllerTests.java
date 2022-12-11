@@ -17,7 +17,7 @@ import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class MmseTestControllerTests {
+class MmseTestControllerTests {
 
     @BeforeEach
     void seed() {
@@ -26,7 +26,7 @@ public class MmseTestControllerTests {
     }
 
     @Test
-    public void givenMmseController__WhenSubmitRequestedWithValidData__ShouldThrow() {
+    void givenMmseController__WhenSubmitRequestedWithValidData__ShouldThrow() {
 
         //ARRANGE
         var userFromSeed = new UserRepository(new DatabaseContextTests())
