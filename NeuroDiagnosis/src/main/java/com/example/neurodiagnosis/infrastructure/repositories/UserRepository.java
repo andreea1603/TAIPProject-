@@ -4,6 +4,7 @@ import com.example.neurodiagnosis.application.interfaces.repositories.IUserRepos
 import com.example.neurodiagnosis.application.service.database.IDatabaseContext;
 import com.example.neurodiagnosis.domain.entities.User;
 import com.example.neurodiagnosis.infrastructure.repositories.base.BaseRepository;
+import com.example.neurodiagnosis.webapi.dtos.RegisterRequestDTO;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
@@ -34,6 +35,33 @@ public class UserRepository extends BaseRepository
         user.setPasswordHash(passwordHash);
         user.setEmailAddress(email);
         user.setId(UUID.randomUUID());
+
+        if(!em.getTransaction().isActive()){
+            em.getTransaction().begin();
+        }
+        em.persist(user);
+        em.getTransaction().commit();
+
+        return user;
+    }
+
+    @Override
+    public User createUser(RegisterRequestDTO registerRequestDTO, String passwordHash) {
+        User user = new User();
+
+        user.setUsername(registerRequestDTO.getUsername());
+        user.setLastName(registerRequestDTO.getLastName());
+        user.setFirstName(registerRequestDTO.getFirstName());
+        user.setPasswordHash(passwordHash);
+        user.setEmailAddress(registerRequestDTO.getEmailAddress());
+        user.setId(UUID.randomUUID());
+        user.setAge(registerRequestDTO.getAge());
+        user.setGender(registerRequestDTO.getGender());
+        user.setCountry(registerRequestDTO.getCountry());
+        user.setProvince(registerRequestDTO.getProvince());
+        user.setCity(registerRequestDTO.getCity());
+        user.setHandedness(registerRequestDTO.getHandedness());
+        user.setMarriedStatus(registerRequestDTO.getMarriedStatus());
 
         if(!em.getTransaction().isActive()){
             em.getTransaction().begin();

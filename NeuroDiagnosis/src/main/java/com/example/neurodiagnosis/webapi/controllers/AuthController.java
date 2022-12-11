@@ -1,6 +1,7 @@
 package com.example.neurodiagnosis.webapi.controllers;
 
 import com.example.neurodiagnosis.application.service.user.IUsersService;
+import com.example.neurodiagnosis.domain.entities.User;
 import com.example.neurodiagnosis.webapi.annotations.EnforcesUserAuthorization;
 import com.example.neurodiagnosis.webapi.dtos.ApplicationUserDTO;
 import com.example.neurodiagnosis.webapi.dtos.JwtTokenResponse;
@@ -40,23 +41,14 @@ public class AuthController {
     @Path("register")
     @Consumes("application/json")
     @Produces("application/json")
-    public ApplicationUserDTO registerUser(final RegisterRequestDTO registerRequestDTO) throws Exception {
+    public User registerUser(final RegisterRequestDTO registerRequestDTO) throws Exception {
 
-        var userOpt = _userService.registerUser(registerRequestDTO.getUsername(),
-                registerRequestDTO.getFirstName(),
-                registerRequestDTO.getLastName(),
-                registerRequestDTO.getEmailAddress(),
-                registerRequestDTO.getPassword()
-                );
+        var userOpt = _userService.registerUser(registerRequestDTO);
 
         if (userOpt.isEmpty()) {
             throw new Exception("Couldn't register user!");
         }
 
-        var user = userOpt.get();
-
-        return new ApplicationUserDTO(user.getId(), user.getEmailAddress(),
-                user.getPhoneNumber(), user.getFirstName(), user.getUsername(),
-                user.getLastName());
+        return userOpt.get();
     }
 }
