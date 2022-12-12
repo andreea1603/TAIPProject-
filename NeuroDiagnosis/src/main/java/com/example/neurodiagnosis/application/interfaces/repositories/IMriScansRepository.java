@@ -8,6 +8,6 @@ import java.io.IOException;
 import java.util.UUID;
 
 public interface IMriScansRepository extends IRepository {
-    Mri addNewScanEntry(UUID usedId, File photo) throws IOException;
+    String addNewScanEntry(UUID usedId, File photo) throws IOException;
     String getMlResults(byte[] picture) throws IOException;
 }

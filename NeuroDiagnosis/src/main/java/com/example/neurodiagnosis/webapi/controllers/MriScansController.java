@@ -30,10 +30,9 @@ public class MriScansController {
     @Path("submitMriScan")
     @Produces("application/json")
     @Consumes(MediaType.MULTIPART_FORM_DATA)
-    public MriScanDTO submitMriScan(@FormParam("id")String userId, @FormParam("image") File image) throws IOException {
-        var result = mriScansService.submitMriScan(UUID.fromString(userId),image);
+    public String submitMriScan(@FormParam("id")String userId, @FormParam("image") File image) throws IOException {
 
-        return new MriScanDTO(result.getUserId(), Arrays.toString(result.getImage()));
+        return mriScansService.submitMriScan(UUID.fromString(userId),image);
     }
 
 }

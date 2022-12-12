@@ -7,5 +7,5 @@ import java.io.IOException;
 import java.util.UUID;
 
 public interface IMriScansService {
-    Mri submitMriScan (UUID usedId, File mineType) throws IOException;
+    String submitMriScan (UUID usedId, File mineType) throws IOException;
 }

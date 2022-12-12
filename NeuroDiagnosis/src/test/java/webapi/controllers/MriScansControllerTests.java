@@ -20,10 +20,7 @@ class MriScansControllerTests {
         //ARRANGE
 
         var mriScansService = Mockito.mock(IMriScansService.class);
-        var mriToReturn = new Mri();
-
-        mriToReturn.setImage(new byte[8]);
-        mriToReturn.setUserId(UUID.randomUUID());
+        String mriToReturn="MidDementia: 92%";
 
         Mockito
                 .when(mriScansService.submitMriScan(Matchers.any(), Matchers.any()))

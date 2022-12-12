@@ -34,8 +34,7 @@ class MriScansServiceTest {
 
     @BeforeEach
     void setUp() throws IOException {
-        Mri mri = new Mri();
-        mri.setUserId(USER_ID);
+        String mri = "{MidDementia: 92%, Dementia: 1%}";
 
         MriScansRepository repository = Mockito.mock(MriScansRepository.class);
         Mockito.when(repository.addNewScanEntry(USER_ID, MINE_TYPE))
@@ -51,8 +50,8 @@ class MriScansServiceTest {
 
     @Test
     void addNewScanEntryTest() throws IOException {
-        Mri mri = mriScansService.submitMriScan(USER_ID,  MINE_TYPE);
+        String mri = mriScansService.submitMriScan(USER_ID,  MINE_TYPE);
 
-        assertEquals(mri.getUserId(), USER_ID);
+        assertEquals(mri, "{MidDementia: 92%, Dementia: 1%}");
     }
 }

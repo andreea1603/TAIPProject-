@@ -35,7 +35,7 @@ public class MriScansRepository extends BaseRepository
     }
 
     @Override
-    public Mri addNewScanEntry(UUID usedId, File photo) throws IOException {
+    public String addNewScanEntry(UUID usedId, File photo) throws IOException {
         Mri mri = new Mri();
         mri.setUserId(usedId);
         mri.setId(UUID.randomUUID());
@@ -73,7 +73,7 @@ public class MriScansRepository extends BaseRepository
             catch (Exception e){
                 System.out.println(e);
             }
-            return mri;
+            return mriResults;
 
         } catch (Exception e){
             return null;

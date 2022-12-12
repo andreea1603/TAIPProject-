@@ -23,7 +23,7 @@ public class MriScansService implements IMriScansService, Serializable {
     }
 
     @Override
-    public Mri submitMriScan(UUID usedId, File mineType) throws IOException {
+    public String submitMriScan(UUID usedId, File mineType) throws IOException {
         return mriScansRepository.addNewScanEntry(usedId, mineType);
     }
 }
