@@ -28,6 +28,6 @@ class MriScansControllerTests {
 
         var mriScansController = new MriScansController(mriScansService);
 
-        assertNotNull(mriScansController.submitMriScan(UUID.randomUUID().toString(), Mockito.mock(File.class)));
+        assertNotNull(mriScansController.submitMriScan( Mockito.mock(File.class)));
     }
 }
