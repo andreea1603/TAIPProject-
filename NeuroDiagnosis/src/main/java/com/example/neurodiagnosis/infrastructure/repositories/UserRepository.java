@@ -64,6 +64,7 @@ public class UserRepository extends BaseRepository
         user.setCity(registerRequestDTO.getCity());
         user.setHandedness(registerRequestDTO.getHandedness());
         user.setMarriedStatus(registerRequestDTO.getMarriedStatus());
+        user.setEthnicity(registerRequestDTO.getEthnicity());
 
         if(!em.getTransaction().isActive()){
             em.getTransaction().begin();

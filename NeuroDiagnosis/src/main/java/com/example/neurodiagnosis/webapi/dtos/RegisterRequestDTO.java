@@ -24,6 +24,7 @@ public class RegisterRequestDTO {
     private String city;
     private Boolean handedness;
     private String marriedStatus;
+    private String ethnicity;
 
     public RegisterRequestDTO(String emailAddress, String username, String firstName, String lastName, String password,
                               String phoneNumber) {

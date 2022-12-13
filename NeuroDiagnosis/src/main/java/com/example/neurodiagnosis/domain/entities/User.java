@@ -35,8 +35,9 @@ public class User extends BaseEntity {
     private String city;
     private int age;
     private String marriedStatus;
+    private String ethnicity;
 
-    public User(UUID id, String emailAddress, String passwordHash, Boolean handedness, String phoneNumber, String firstName, String username, String lastName, Boolean gender, String country, String province, String city, int age, String marriedStatus, String mriScanResult) {
+    public User(UUID id, String emailAddress, String passwordHash, Boolean handedness, String phoneNumber, String firstName, String username, String lastName, Boolean gender, String country, String province, String city, int age, String marriedStatus, String ethnicity, String mriScanResult) {
         super(id);
         this.emailAddress = emailAddress;
         this.passwordHash = passwordHash;
@@ -51,6 +52,7 @@ public class User extends BaseEntity {
         this.city = city;
         this.age = age;
         this.marriedStatus = marriedStatus;
+        this.ethnicity = ethnicity;
         MriScanResult = mriScanResult;
     }
 
@@ -60,7 +62,7 @@ public class User extends BaseEntity {
         super(userId);
     }
 
-    public User(UUID id, String emailAddress, String passwordHash, Boolean handedness, String phoneNumber, String firstName, String username, String lastName, Boolean gender, String country, String province, String city) {
+    public User(UUID id, String emailAddress, String passwordHash, Boolean handedness, String phoneNumber, String firstName, String username, String lastName, Boolean gender, String country, String province, String city, String ethnicity) {
         super(id);
         this.emailAddress = emailAddress;
         this.passwordHash = passwordHash;
@@ -73,6 +75,7 @@ public class User extends BaseEntity {
         this.country = country;
         this.province = province;
         this.city = city;
+        this.ethnicity = ethnicity;
     }
 
     public User(String emailAddress, String passwordHash, Boolean handedness, String phoneNumber, String firstName, String username, String lastName, Date birthDate, Boolean gender, UUID userId) {
@@ -114,6 +117,7 @@ public class User extends BaseEntity {
                 ", country='" + country + '\'' +
                 ", province='" + province + '\'' +
                 ", city='" + city + '\'' +
+                ", ethnicity='" + ethnicity + '\'' +
                 '}';
     }
 
@@ -123,12 +127,12 @@ public class User extends BaseEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return emailAddress.equals(user.emailAddress) && passwordHash.equals(user.passwordHash) && Objects.equals(handedness, user.handedness) && Objects.equals(phoneNumber, user.phoneNumber) && firstName.equals(user.firstName) && username.equals(user.username) && lastName.equals(user.lastName)&& Objects.equals(gender, user.gender) && Objects.equals(country, user.country) && Objects.equals(province, user.province) && Objects.equals(city, user.city);
+        return emailAddress.equals(user.emailAddress) && passwordHash.equals(user.passwordHash) && Objects.equals(handedness, user.handedness) && Objects.equals(phoneNumber, user.phoneNumber) && firstName.equals(user.firstName) && username.equals(user.username) && lastName.equals(user.lastName)&& Objects.equals(gender, user.gender) && Objects.equals(country, user.country) && Objects.equals(province, user.province) && Objects.equals(city, user.city) && Objects.equals(ethnicity, user.ethnicity);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(emailAddress, passwordHash, handedness, phoneNumber, firstName, username, lastName, gender, country, province, city);
+        return Objects.hash(emailAddress, passwordHash, handedness, phoneNumber, firstName, username, lastName, gender, country, province, city, ethnicity);
     }
     public String getMriScanResult() {
         return MriScanResult;

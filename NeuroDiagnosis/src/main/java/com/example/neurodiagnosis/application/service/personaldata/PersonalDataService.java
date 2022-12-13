@@ -1,8 +1,9 @@
 package com.example.neurodiagnosis.application.service.personaldata;
 
+import com.example.neurodiagnosis.application.interfaces.repositories.IMmseTestResultsRepository;
 import com.example.neurodiagnosis.application.interfaces.repositories.IUserRepository;
+import com.example.neurodiagnosis.domain.entities.TestResult;
 import com.example.neurodiagnosis.domain.entities.User;
-import com.example.neurodiagnosis.webapi.dtos.PersonalDataMLDTO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Inject;
@@ -16,6 +17,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -25,46 +27,58 @@ import java.util.UUID;
 public class PersonalDataService implements IPersonalDataService, Serializable {
     private IUserRepository userRepository;
 
+    private IMmseTestResultsRepository mmseTestResultsRepository;
+
     @Inject
-    public PersonalDataService(@Named("userRepository") IUserRepository userRepository) {
+    public PersonalDataService(@Named("userRepository") IUserRepository userRepository, @Named("mmseTestResultsRepository") IMmseTestResultsRepository mmseTestResultsRepository) {
         this.userRepository = userRepository;
+        this.mmseTestResultsRepository = mmseTestResultsRepository;
     }
 
     @Override
-    public String getMlResult(UUID userId, PersonalDataMLDTO personalDataMLDTO) throws IOException, InterruptedException {
+    public String getMlResult(UUID userId) throws IOException, InterruptedException {
         Optional<User> user = userRepository.findById(userId);
+        List<TestResult> testResult = mmseTestResultsRepository.getTestResults(userId);
         if(user.isPresent()){
             User myUser = user.get();
             String url1 = "http://127.0.0.1:5000/text";
             var values = new HashMap<String, Float>(){{
                 put("AGE", (float) myUser.getAge());
                 put("PTGENDER", myUser.getGender()?1.0f:0.0f);
-                put("PTEDUCAT", (float) personalDataMLDTO.educated);
-                put("CDRSB", personalDataMLDTO.CDRSB);
-                put("ADAS11", personalDataMLDTO.ADAS11);
-                put("ADAS13", personalDataMLDTO.ADAS13);
-                put("ADASQ4", personalDataMLDTO.ADASQ4);
-                put("MMSE", personalDataMLDTO.MMSE);
-                put("RAVLT_immediate", personalDataMLDTO.RAVLT_immediate);
-                put("RAVLT_learning", personalDataMLDTO.RAVLT_learning);
-                put("RAVLT_forgetting", personalDataMLDTO.RAVLT_forgetting);
-                put("RAVLT_perc_forgetting", personalDataMLDTO.RAVLT_perc_forgetting);
-                put("FAQ", personalDataMLDTO.FAQ);
-                put("mPACCdigit", personalDataMLDTO.mPACCdigit);
-                put("mPACCtrailsB", personalDataMLDTO.mPACCtrailsB);
-                put("CDRSB_bl", personalDataMLDTO.CDRSB_bl);
-                put("ADAS11_bl", personalDataMLDTO.ADAS11_bl);
-                put("ADAS13_bl", personalDataMLDTO.ADAS13_bl);
-                put("ADASQ4_bl", personalDataMLDTO.ADASQ4_bl);
-                put("MMSE_bl", personalDataMLDTO.MMSE_bl);
-                put("RAVLT_immediate_bl", personalDataMLDTO.RAVLT_immediate_bl);
-                put("RAVLT_learning_bl", personalDataMLDTO.RAVLT_learning_bl);
-                put("RAVLT_forgetting_bl", personalDataMLDTO.RAVLT_forgetting_bl);
-                put("RAVLT_perc_forgetting_bl", personalDataMLDTO.RAVLT_perc_forgetting_bl);
-                put("FAQ_bl", personalDataMLDTO.FAQ_bl);
-                put("mPACCdigit_bl", personalDataMLDTO.mPACCdigit_bl);
-                put("mPACCtrailsB_bl", personalDataMLDTO.mPACCtrailsB_bl);
             }};
+            switch (myUser.getMarriedStatus()) {
+                case "Married":
+                    values.put("PTMARRY", 0.0f);
+                    break;
+                case "Divorced":
+                    values.put("PTMARRY", 1.0f);
+                    break;
+                case "Widowed":
+                    values.put("PTMARRY", 2.0f);
+                    break;
+                case "Never married":
+                    values.put("PTMARRY", 3.0f);
+                    break;
+            }
+            switch (myUser.getEthnicity()) {
+                case "White":
+                    values.put("PTRACCAT", 0.0f);
+                    break;
+                case "Black":
+                    values.put("PTRACCAT", 1.0f);
+                    break;
+                case "Asian":
+                    values.put("PTRACCAT", 2.0f);
+                    break;
+                case "More than one":
+                    values.put("PTRACCAT", 3.0f);
+                    break;
+                case "Other":
+                    values.put("PTRACCAT", 4.0f);
+                    break;
+            }
+            Integer score =testResult.get(testResult.size() -1).getTestResult();
+            values.put("MMSE", score.floatValue());
 
             var objectMapper = new ObjectMapper();
             String requestBody = objectMapper

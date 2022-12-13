@@ -29,9 +29,9 @@ public class PersonalDataController {
     @Produces("application/json")
     @Path("getML")
     @EnforcesUserAuthorization
-    public String getMLPersonalData(final PersonalDataMLDTO personalDataMLDTO) throws Exception{
+    public String getMLPersonalData() throws Exception{
         Principal userRequesting = securityContext.getUserPrincipal();
         UUID userId = UUID.fromString(userRequesting.getName());
-        return personalDataService.getMlResult(userId, personalDataMLDTO);
+        return personalDataService.getMlResult(userId);
     }
 }
