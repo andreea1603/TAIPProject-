@@ -42,7 +42,7 @@ public class MriScansRepository extends BaseRepository
 
         byte[] bytes = Files.readAllBytes(photo.toPath());
         String mriResults = getMlResults(bytes);
-
+        System.out.println(mriResults);
         try {
             mri.setImage(Files.readAllBytes(photo.toPath()));
         }catch (Exception e){
@@ -60,23 +60,24 @@ public class MriScansRepository extends BaseRepository
 
             UserRepository userRepository = new UserRepository(getDatabaseContext());
 
-            Optional<User> myUser = Optional.of(em.find(User.class, usedId));
 
             try {
 
-                myUser.ifPresent(user -> user.setMriScanResult(mriResults));
                 EntityManager emUser = userRepository.getEntityManager();
+                Optional<User> myUser = Optional.of(emUser.find(User.class, usedId));
+                myUser.ifPresent(user -> user.setMriScanResult(mriResults));
+
                 emUser.getTransaction().begin();
                 emUser.persist(myUser.get());
                 emUser.getTransaction().commit();
             }
             catch (Exception e){
-                System.out.println(e);
+                return mriResults;
             }
             return mriResults;
 
         } catch (Exception e){
-            return null;
+            return mriResults;
         }
     }
 

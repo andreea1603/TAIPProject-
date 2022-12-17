@@ -34,9 +34,9 @@ public class MriScansController {
 
     @POST
     @Path("submitMriScan")
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces("application/json")
     @EnforcesUserAuthorization
-
     public String submitMriScan(@FormParam("image") File image) throws IOException {
         Principal userRequesting = securityContext.getUserPrincipal();
         UUID userId = UUID.fromString(userRequesting.getName());
