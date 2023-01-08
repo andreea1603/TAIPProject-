@@ -77,7 +77,7 @@ public class PersonalDataService implements IPersonalDataService, Serializable {
                     values.put("PTRACCAT", 4.0f);
                     break;
             }
-            Integer score =testResult.get(testResult.size() -1).getTestResult();
+            Integer score = testResult.get(testResult.size() -1).getTestResult();
             values.put("MMSE", score.floatValue());
 
             var objectMapper = new ObjectMapper();

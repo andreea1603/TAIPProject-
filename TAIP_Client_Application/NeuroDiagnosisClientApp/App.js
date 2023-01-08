@@ -5,7 +5,6 @@ import LandingPage  from './application/landingPage';
 import RegisterPage from './application/registerPage';
 import LoginPage from './application/loginPage';
 import DefaultMessagePage from './application/defaultMessagePage';
-import MainNotAuthPage from './application/mainNotAuthPage';
 import MainAuthPage from './application/mainAuthPage';
 import ScanPage from './application/scanPage';
 import HistoryPage from './application/historyPage';
@@ -20,7 +19,6 @@ function App () {
         <Stack.Screen name='RegisterPage' component={RegisterPage}/>
         <Stack.Screen name='LoginPage' component={LoginPage}/>
         <Stack.Screen name='MainAuthPage' component={MainAuthPage}/>
-        <Stack.Screen name='MainNotAuthPage' component={MainNotAuthPage}/>
         <Stack.Screen name='DefaultMessagePage' component={DefaultMessagePage}/>
         <Stack.Screen name='ScanPage' component={ScanPage}/>
         <Stack.Screen name='HistoryPage' component={HistoryPage}/>

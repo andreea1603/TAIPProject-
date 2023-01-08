@@ -7,11 +7,6 @@ function LandingPage ({navigation}) {
       <ImageBackground
         source={require('../resources/logo.jpg')}
         style={{width: '100%', height: '100%'}}>
-         <Button title="Use the app without an account >"
-            style = {{ height: 35, marginTop:"3%", marginLeft:'16%'}}
-            color = '#026800'
-            onPress={() => navigation.navigate('MainNotAuthPage')}/>
-        
         <View style={{flex: 1,
                       justifyContent: 'flex-end',
                       marginLeft: 25,

@@ -1,39 +1,55 @@
-import React, { Component } from 'react';
-import { StyleSheet, View, ImageBackground, Text } from 'react-native';
+import React, { useState } from 'react';
+import {  StyleSheet, View, ImageBackground, Text } from 'react-native';
 import { Table, Row, Rows } from 'react-native-table-component';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export default class HistoryPage extends Component {
-    constructor(props) {
-    super(props);
-    this.state = {
-      HeadTable: ['Test Date', 'Test Result'],
-      DataTable: [
-        ['10-10-2022', '9.97'],
-        ['11-10-2022', '9.86'],
-        ['12-10-2022', '9.90'],
-        ['13-10-2022', '9.74'],
-        ['14-10-2022', '9.89']
-      ]
-    }
-  }
+function HistoryPage({navigation}){
+  const [dataTable, setDataTable] = useState([]);
 
-  render() {
-    const state = this.state;
-    return (
+  getHistoryElements(navigation).then((results) => {setDataTable(results);});
+  
+  return (
     <ImageBackground
-        source={require('../resources/10610.jpg')}
-        style={{width: '100%', height:'100%'} }>
-            <View style={styles.container}>
-            <Text style={styles.title}>History</Text>
-            <Table borderStyle={{borderWidth: 1, borderColor: '#025977'}} style={styles.tableStyle}>
-              <Row data={state.HeadTable} style={styles.HeadStyle} textStyle={styles.TableText}/>
-              <Rows data={state.DataTable} textStyle={styles.TableText}/>
-            </Table>
+      source={require('../resources/10610.jpg')}
+      style={{width: '100%', height:'100%'} }>
+        <View style={styles.container}>
+         <Text style={styles.title}>History</Text>
+          <Table borderStyle={{borderWidth: 1, borderColor: '#025977'}} style={styles.tableStyle}>
+            <Row data={['Test Result', 'Test Date']} style={styles.HeadStyle} textStyle={styles.TableText}/>
+            <Rows data={dataTable} textStyle={styles.TableText}/>
+          </Table>
         </View>
-      </ImageBackground>
-    )
+    </ImageBackground>
+    );
   }
-}
+
+
+async function getHistoryElements(navigation) {
+  const jwtToken = await AsyncStorage.getItem("jwtToken");
+  
+  return fetch('http://192.168.1.245:8080/NeuroDiagnosis-1.0-SNAPSHOT/api/mmse/history', {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${jwtToken}`,
+        'Content-Type': 'application/json', 
+        'Accept': 'application/json'
+     }})
+    .then((response) => response.json())
+    .then((result) => {
+      let tableParam = [];
+      for(let i=0; i < result.length; i++) {
+          tableParam.push([result[i]['testResult'], result[i]['testDate']]);
+        }
+        return tableParam;
+      })
+    .catch((error) => {
+        if (error.toString().startsWith("SyntaxError")){
+          navigation.navigate('DefaultMessagePage', {message: error.toString()});
+        }
+        throw error;
+    });
+  }
+
 
 const styles = StyleSheet.create({
     container: { 
@@ -66,3 +82,5 @@ const styles = StyleSheet.create({
         color: '#025977'
       },
   });
+
+  export default HistoryPage;

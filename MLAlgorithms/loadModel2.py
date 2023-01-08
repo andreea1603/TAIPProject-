@@ -18,7 +18,9 @@ def getPredict(AGE, PTGENDER, PTMARRY, MMSE, PTRACCAT):
                                 "PTMARRY": PTMARRY, "MMSE": MMSE, "PTRACCAT": PTRACCAT})
 
     filename = 'xgbcc.sav'
-    loaded_model = pickle.load(open(filename, 'rb'))
+    file = open(filename, 'rb')
+    loaded_model = pickle.load(file)
+    file.close()
     y_pred = int(loaded_model.predict(my_data))
     return translate(y_pred)
 
